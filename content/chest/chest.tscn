@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drk8uacascpwo" path="res://content/chest/chest.gd" id="1_chc5m"]
 [ext_resource type="Texture2D" uid="uid://b4ohab6kft7yr" path="res://content/chest/storage_chest.tres" id="1_tdv3h"]
-[ext_resource type="PackedScene" uid="uid://cnttff5qgne7j" path="res://content/UI/Inventory/scenes and scripts/comparison_inventory.tscn" id="2_6ivny"]
+[ext_resource type="PackedScene" uid="uid://1bns34lnihe1" path="res://content/UI/Inventory/scenes and scripts/chest_inventory.tscn" id="2_yahd8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11wu7"]
 size = Vector2(54, 36)
@@ -49,7 +49,7 @@ _data = {
 
 [node name="Chest" type="Area2D"]
 script = ExtResource("1_chc5m")
-chest_inventory_scene = ExtResource("2_6ivny")
+chest_inventory_scene = ExtResource("2_yahd8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_11wu7")

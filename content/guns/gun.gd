@@ -18,7 +18,6 @@ var gun_resource: GunResource
 var bullet_component: BulletComponent
 var inventory_data: InventoryData
 
-
 # Ammo stuff
 var current_ammo := 0
 var is_reloading := false

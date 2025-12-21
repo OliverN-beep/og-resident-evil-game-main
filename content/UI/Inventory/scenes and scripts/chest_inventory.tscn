@@ -1,17 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://1bns34lnihe1"]
+[gd_scene load_steps=5 format=3 uid="uid://1bns34lnihe1"]
 
 [ext_resource type="Script" uid="uid://cb4aufnrp256e" path="res://content/UI/Inventory/scenes and scripts/inventory.gd" id="1_u63ji"]
-[ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="2_whu0b"]
-[ext_resource type="Script" uid="uid://c141oo1kmrq0a" path="res://content/resources/inventory_data.gd" id="3_ueq0y"]
-[ext_resource type="Resource" uid="uid://c52thd5g3dyps" path="res://content/UI/Inventory/inventory resources/shotgun.tres" id="3_vlpsj"]
-[ext_resource type="Resource" uid="uid://chmahi0wef31" path="res://content/UI/Inventory/inventory resources/handgun.tres" id="4_0610h"]
+[ext_resource type="Resource" uid="uid://bchg0eh6w78r1" path="res://content/UI/Inventory/resources/inventory_data/chest_data.tres" id="2_vnocv"]
 [ext_resource type="Script" uid="uid://0jlsmvn2luwe" path="res://content/UI/Inventory/scenes and scripts/item_grid.gd" id="7_7h6be"]
 [ext_resource type="PackedScene" uid="uid://b3q3blp1fmvsf" path="res://content/UI/Inventory/scenes and scripts/inventory_slot.tscn" id="8_v21qh"]
-
-[sub_resource type="Resource" id="Resource_lajs6"]
-script = ExtResource("3_ueq0y")
-items = Array[ExtResource("2_whu0b")]([ExtResource("3_vlpsj"), ExtResource("4_0610h")])
-metadata/_custom_type_script = "uid://c141oo1kmrq0a"
 
 [node name="ChestInventory" type="Control"]
 layout_mode = 3
@@ -27,7 +19,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_u63ji")
-inventory_data = SubResource("Resource_lajs6")
+inventory_data = ExtResource("2_vnocv")
 
 [node name="ItemGrid" type="GridContainer" parent="Inventory"]
 unique_name_in_owner = true
