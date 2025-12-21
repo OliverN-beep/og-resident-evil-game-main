@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://bkvqofcd5e3wi"]
+
+[ext_resource type="Texture2D" uid="uid://k1jgbfi0c2sv" path="res://content/tilesets/train/train_d.png" id="1_o4vdx"]
+[ext_resource type="Texture2D" uid="uid://che6bq53dik7u" path="res://content/tilesets/train/train_n.png" id="2_rwgfh"]
+
+[resource]
+diffuse_texture = ExtResource("1_o4vdx")
+normal_texture = ExtResource("2_rwgfh")

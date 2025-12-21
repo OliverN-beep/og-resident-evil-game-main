@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://bv4ftqali5shi"]
+
+[ext_resource type="Texture2D" uid="uid://27qhgcox7paa" path="res://content/tilesets/snowy chalet/snowy chalet_d.png" id="1_1mlnq"]
+[ext_resource type="Texture2D" uid="uid://cxryyp7mcfs1i" path="res://content/tilesets/snowy chalet/snowy chalet_n.png" id="2_a8oau"]
+
+[resource]
+diffuse_texture = ExtResource("1_1mlnq")
+normal_texture = ExtResource("2_a8oau")

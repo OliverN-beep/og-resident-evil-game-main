@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://0ir2chnqb0xe"]
+
+[ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_ofnnr"]
+[ext_resource type="Texture2D" uid="uid://4akdm2dyv48q" path="res://content/UI/Inventory/sprites/rifle_d.png" id="2_p76gb"]
+
+[resource]
+script = ExtResource("1_ofnnr")
+name = "Rifle"
+texture = ExtResource("2_p76gb")
+dimensions = Vector2i(4, 1)
+metadata/_custom_type_script = "uid://dttjy8l3fgchc"

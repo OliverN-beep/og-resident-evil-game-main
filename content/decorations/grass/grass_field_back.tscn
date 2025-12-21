@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://clpkh8umny85a"]
+
+[ext_resource type="PackedScene" uid="uid://docmnyb3dnuc" path="res://content/decorations/grass/grass_1.tscn" id="1_y71wq"]
+
+[node name="grass_field_back" type="Node2D"]
+
+[node name="grass1" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(4, 1)
+
+[node name="grass2" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(2, -5)
+
+[node name="grass3" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(-4, 0)
+
+[node name="grass4" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(-2, -4)
+
+[node name="grass5" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(5, -6)
+
+[node name="grass6" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(1, 1)
+
+[node name="grass7" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(-1, 2)
+
+[node name="grass8" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(8, -2)
+
+[node name="grass9" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(6, 2)
+
+[node name="grass10" parent="." instance=ExtResource("1_y71wq")]
+position = Vector2(0, -6)

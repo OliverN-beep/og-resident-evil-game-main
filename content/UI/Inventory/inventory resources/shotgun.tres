@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://c52thd5g3dyps"]
+
+[ext_resource type="Resource" uid="uid://mr1r7ilf3pst" path="res://content/guns/gun resources/shotgun_resource.tres" id="1_og4yj"]
+[ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="2_i0jak"]
+[ext_resource type="Texture2D" uid="uid://cbdc6d4tesux5" path="res://content/UI/Inventory/sprites/shotgun_d.png" id="3_b02qy"]
+
+[resource]
+script = ExtResource("2_i0jak")
+name = "Shotgun"
+texture = ExtResource("3_b02qy")
+dimensions = Vector2i(4, 2)
+gun_resource = ExtResource("1_og4yj")
+ammo_type = "shells"
+ammo_amount = 5

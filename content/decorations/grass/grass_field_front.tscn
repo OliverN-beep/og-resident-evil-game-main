@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnx4iue3xhc58"]
+
+[ext_resource type="PackedScene" uid="uid://docmnyb3dnuc" path="res://content/decorations/grass/grass_1.tscn" id="1_d4fel"]
+
+[node name="grass_field_front" type="Node2D"]
+z_index = 3
+
+[node name="grass1" parent="." instance=ExtResource("1_d4fel")]
+
+[node name="grass2" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(2, -2)
+
+[node name="grass3" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(-2, 2)
+
+[node name="grass4" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(-4, -2)
+
+[node name="grass5" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(2, 6)
+
+[node name="grass6" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(6, -3)
+
+[node name="grass7" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(-6, 4)
+
+[node name="grass8" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(-2, -7)
+
+[node name="grass9" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(5, 4)
+
+[node name="grass10" parent="." instance=ExtResource("1_d4fel")]
+position = Vector2(-4, 6)

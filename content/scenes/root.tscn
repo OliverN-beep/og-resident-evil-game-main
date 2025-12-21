@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0tug1d4vbg01"]
+
+[ext_resource type="PackedScene" uid="uid://c2s4ny8o5mfwq" path="res://content/entities/player/player.tscn" id="1_870w3"]
+[ext_resource type="Script" uid="uid://dhfskdopey63c" path="res://content/scenes/root.gd" id="1_l0ysy"]
+[ext_resource type="PackedScene" uid="uid://cy6b1lvqky2kp" path="res://content/entities/test_enemy/test_enemy.tscn" id="2_ikevl"]
+[ext_resource type="Script" uid="uid://bwxx5o7t2km2l" path="res://content/scripts/player_camera.gd" id="2_ym51k"]
+[ext_resource type="PackedScene" uid="uid://cclxpyg7phsn4" path="res://content/UI/Pause Menu/pause_menu.tscn" id="3_dj6qu"]
+[ext_resource type="PackedScene" uid="uid://v82etf4nwkf4" path="res://content/scenes/playablemap_1.tscn" id="6_h05mm"]
+[ext_resource type="Shader" uid="uid://qbdj5m885et7" path="res://content/shaders/screen_effect.gdshader" id="8_gmax0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13l5x"]
+shader = ExtResource("8_gmax0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_oorap"]
+size = Vector2(1280, 720)
+center_offset = Vector3(640, 360, 0)
+
+[node name="root" type="Node2D"]
+script = ExtResource("1_l0ysy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+script = ExtResource("2_ym51k")
+
+[node name="Player" parent="." instance=ExtResource("1_870w3")]
+position = Vector2(-22, 35)
+
+[node name="test_enemy" parent="." instance=ExtResource("2_ikevl")]
+position = Vector2(-132, -46)
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_dj6qu")]
+
+[node name="playablemap1" parent="." instance=ExtResource("6_h05mm")]
+
+[node name="CRT Canvas" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CRT Canvas"]
+material = SubResource("ShaderMaterial_13l5x")
+mesh = SubResource("QuadMesh_oorap")
+
+[node name="darkness tint" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.34781694, 0.34781697, 0.3478169, 1)

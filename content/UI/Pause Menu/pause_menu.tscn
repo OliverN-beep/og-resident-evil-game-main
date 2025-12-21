@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cclxpyg7phsn4"]
+
+[ext_resource type="Script" uid="uid://ba0kiugkqb372" path="res://content/UI/Pause Menu/pause_menu.gd" id="1_1m2p7"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_1m2p7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 60.0
+offset_top = 25.0
+offset_right = 260.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

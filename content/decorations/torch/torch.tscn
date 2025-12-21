@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj1whb32q672x"]
+
+[ext_resource type="Script" uid="uid://kpgofenifnw2" path="res://content/decorations/torch/torch.gd" id="1_apn3m"]
+[ext_resource type="Texture2D" uid="uid://2nlmtc660r6v" path="res://content/decorations/torch/Torch_d.png" id="2_2nqae"]
+[ext_resource type="Texture2D" uid="uid://b206b0o6wgudo" path="res://content/lights/point light.png" id="3_2nqae"]
+
+[sub_resource type="Animation" id="Animation_33krm"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_apn3m"]
+_data = {
+&"Flame": SubResource("Animation_33krm")
+}
+
+[node name="Torch" type="Node2D"]
+script = ExtResource("1_apn3m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
+texture_filter = 1
+texture = ExtResource("2_2nqae")
+hframes = 3
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://content/decorations/torch/Torch.aseprite",
+"source_uid": 2484935816402419077
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a1c438890e5be24ab82a4121e4c88622"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_apn3m")
+}
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -1)
+color = Color(0.77785987, 0.44896913, 0.038364638, 1)
+texture = ExtResource("3_2nqae")

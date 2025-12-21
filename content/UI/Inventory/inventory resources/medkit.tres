@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bfqdnpupf03j1"]
+
+[ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_5h7pl"]
+[ext_resource type="Texture2D" uid="uid://3vfypptd2j03" path="res://content/UI/Inventory/sprites/health pack_d.png" id="2_crh1k"]
+
+[resource]
+script = ExtResource("1_5h7pl")
+name = "Medkit"
+texture = ExtResource("2_crh1k")
+dimensions = Vector2i(1, 2)

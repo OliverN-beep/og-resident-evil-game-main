@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://dhjkao3cb1lyk"]
+
+[ext_resource type="Texture2D" uid="uid://2aj64rlu20jq" path="res://content/entities/targeting enemy/targeting enemy 1_d.png" id="1_thy3h"]
+[ext_resource type="Texture2D" uid="uid://dquah3x1uq06" path="res://content/entities/targeting enemy/targeting enemy 1_n.png" id="2_sfsoh"]
+
+[resource]
+diffuse_texture = ExtResource("1_thy3h")
+normal_texture = ExtResource("2_sfsoh")

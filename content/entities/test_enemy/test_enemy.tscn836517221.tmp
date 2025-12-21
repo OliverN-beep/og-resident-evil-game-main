@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=4 uid="uid://cy6b1lvqky2kp"]
+
+[ext_resource type="Script" uid="uid://bgd32bar3coxv" path="res://content/entities/test_enemy/test_enemy.gd" id="1_b3jmt"]
+[ext_resource type="Script" uid="uid://dw5oefh5egyfm" path="res://content/components/health_component.gd" id="2_vd45q"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_b3jmt"]
+_data = PackedByteArray("AAADAAUAAAABAAAAYAAAAGAAAACgAAAAUklGRpgAAABXRUJQVlA4TIwAAAAvX8AXECegIAABRC2yw2U/ibRt5mD+6fBVXQmZtG2uGkrPqdj8B0D3e9JcwVVsu3ETChIDyUYgMdCIPyovL/vSfkT0fwKWn0HvzlH3EpkbiIlPqglpHkJRBYkqyNwNw0QMKY4SQhmMUcVRQqguoLu////ZvXSRcTGah1ZVNxaZsamaW4ut1dxa97i++w==")
+size_override = Vector2(96, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3smdo"]
+size = Vector2(12, 12)
+
+[sub_resource type="Animation" id="Animation_jtgcf"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_vd45q"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_krdyo"]
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ot2xv"]
+_data = {
+&"Death": SubResource("Animation_jtgcf"),
+&"Idle": SubResource("Animation_vd45q"),
+&"Walk": SubResource("Animation_krdyo")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3jmt"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3smdo"]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3jmt"]
+radius = 70.0
+
+[node name="test_enemy" type="CharacterBody2D"]
+script = ExtResource("1_b3jmt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_b3jmt")
+hframes = 2
+vframes = 2
+frame = 1
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://content/entities/test_enemy/enemy.aseprite",
+"source_uid": 3656560175341090257
+}
+metadata/_aseprite_wizard_source_file_hash_ = "92c6b2da329611b4b16ec12f3c20001a"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3smdo")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ot2xv")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_b3jmt")
+
+[node name="enter_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area"]
+shape = SubResource("CircleShape2D_3smdo")
+
+[node name="exit_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area"]
+shape = SubResource("CircleShape2D_b3jmt")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_vd45q")
+max_health = 10
+metadata/_custom_type_script = "uid://dw5oefh5egyfm"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="enter_area" to="." method="_on_enter_area_body_entered"]
+[connection signal="body_exited" from="exit_area" to="." method="_on_exit_area_body_exited"]
