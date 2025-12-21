@@ -184,3 +184,6 @@ func _reload():
 	
 	current_ammo += taken
 	is_reloading = false
+	
+	if not inventory_data.has_ammo(gun_resource.ammo_type):
+		return

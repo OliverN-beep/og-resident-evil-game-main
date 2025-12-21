@@ -2,6 +2,8 @@ extends Sprite2D
 
 const SLOT_SIZE = 16
 
+@onready var stack_label: Label = $StackLabel
+
 var data: ItemData
 var is_picked := false
 var is_rotated := false
@@ -21,13 +23,20 @@ func _ready() -> void:
 	base_dimensions = data.dimensions
 	texture = data.texture
 	rotation_degrees = 0
+	_update_stack_label()
+
+func _update_stack_label() -> void:
+	if data.ammo_resource:
+		stack_label.text = str(data.ammo_amount)
+	else:
+		stack_label.text = ""
 
 func _process(_delta: float) -> void:
 	if is_picked:
 		global_position = get_global_mouse_position()
 
 func set_init_position(pos: Vector2) -> void:
-	global_position = pos + size / 2
+	position = pos + size / 2  # local position relative to parent (GridContainer)
 
 func get_picked_up() -> void:
 	add_to_group("held_item")
@@ -59,16 +68,15 @@ func _try_select() -> void:
 	if not data:
 		return
 
-	# Only guns are selectable for equip
 	if data.gun_resource == null:
 		return
 
-	# Tell the player to equip this gun
-	get_tree().call_group(
-		"player",
-		"equip_gun",
-		data
-	)
+	# Only equip if parented to the player's inventory grid
+	var player_inventory := get_tree().get_first_node_in_group("player_inventory_grid")
+	if get_parent() != player_inventory:
+		return
+
+	get_tree().call_group("player", "equip_gun", data)
 
 
 func do_rotation() -> void:
@@ -76,6 +84,7 @@ func do_rotation() -> void:
 	rotation_degrees = 90 if is_rotated else 0
 
 func reparent_to_inventory(inventory_ui: Node) -> void:
+	# inventory_ui should be the GridContainer
 	if get_parent() != inventory_ui:
 		var prev_global := global_position
 		get_parent().remove_child(self)

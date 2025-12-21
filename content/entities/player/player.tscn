@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2s4ny8o5mfwq"]
+[gd_scene load_steps=16 format=3 uid="uid://c2s4ny8o5mfwq"]
 
 [ext_resource type="Script" uid="uid://b8f0ildxxit2b" path="res://content/entities/player/player.gd" id="1_cp3qr"]
 [ext_resource type="Script" uid="uid://dw5oefh5egyfm" path="res://content/components/health/health_component.gd" id="2_55yfw"]
+[ext_resource type="Resource" uid="uid://dhmfenv3waduj" path="res://content/UI/Inventory/resources/inventory_data/player_data.tres" id="2_r5tfu"]
 [ext_resource type="Texture2D" uid="uid://cs0gqas2ioi50" path="res://content/entities/player/player2 (LIGHT).tres" id="3_t4ell"]
 [ext_resource type="PackedScene" uid="uid://ibed6d3m8j7e" path="res://content/UI/health/hearts_ui.tscn" id="5_55yfw"]
+[ext_resource type="PackedScene" uid="uid://dx86234kxp1ur" path="res://content/UI/Inventory/scenes and scripts/player_inventory.tscn" id="5_r5tfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1ecw"]
 size = Vector2(8, 10)
@@ -134,6 +136,8 @@ _data = {
 [node name="Player" type="CharacterBody2D" groups=["damageable", "player"]]
 z_index = 2
 script = ExtResource("1_cp3qr")
+inventory_data = ExtResource("2_r5tfu")
+player_inventory_scene = ExtResource("5_r5tfu")
 
 [node name="Components" type="Node" parent="."]
 

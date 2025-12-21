@@ -15,6 +15,8 @@ func _ready() -> void:
 	_init_slot_data()
 	
 	mouse_filter = MOUSE_FILTER_PASS
+	
+	add_to_group("player_inventory_grid")
 
 func _create_slots() -> void:
 	self.columns = grid_dimensions.x
@@ -63,7 +65,7 @@ func _gui_input(event: InputEvent) -> void:
 				var saved_global = held_item.global_position
 				
 				# Reparent into this inventory
-				held_item.reparent_to_inventory(self.get_parent())
+				held_item.reparent_to_inventory(self)
 				
 				# Restore its global position
 				held_item.global_position = saved_global
@@ -123,8 +125,8 @@ func _init_slot_data() -> void:
 func _attempt_to_add_item_data(item: Node) -> bool:
 	var slot_index: int = 0
 	var dims = item.get_dimensions()
-	
-	# Try default orientation first
+
+	# Try default orientation
 	while slot_index < slot_data.size():
 		if _item_fits(slot_index, dims):
 			for y in dims.y:
@@ -136,7 +138,7 @@ func _attempt_to_add_item_data(item: Node) -> bool:
 			item.set_auto_rotated(false)
 			return true
 		slot_index += 1
-	
+
 	# Try rotated orientation
 	item.is_rotated = true
 	item.update_visual_rotation()
@@ -151,14 +153,15 @@ func _attempt_to_add_item_data(item: Node) -> bool:
 			item.set_init_position(_get_coords_from_slot_index(slot_index))
 			return true
 		slot_index += 1
-	
-	# Could not fit: reset rotation and log error
+
+	# Could not fit
 	item.is_rotated = false
 	item.update_visual_rotation()
 	item.set_auto_rotated(false)
-	
-	push_error("Inventory full: Could not add item '%s' (size %dx%d)" % [item.data.name, item.data.dimensions.x, item.data.dimensions.y])
+	push_error("Inventory full: Could not add item '%s' (size %dx%d)" %
+		[item.data.name, item.data.dimensions.x, item.data.dimensions.y])
 	return false
+
 
 func _item_fits(index: int, dimensions: Vector2i) -> bool:
 	for y in dimensions.y:
@@ -184,10 +187,10 @@ func _get_slot_index_from_coords(global_coords: Vector2) -> int:
 	
 	return slot.x + slot.y * columns
 
-func _get_coords_from_slot_index(index: int) -> Vector2i:
+func _get_coords_from_slot_index(index: int) -> Vector2:
 	var row = index / columns
 	var column = index % columns
-	return Vector2i(global_position) + Vector2i(column * SLOT_SIZE, row * SLOT_SIZE)
+	return Vector2(column * SLOT_SIZE, row * SLOT_SIZE)
 
 func _is_mouse_over_grid() -> bool:
 	var rect = Rect2(global_position, size)

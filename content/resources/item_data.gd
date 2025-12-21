@@ -7,3 +7,7 @@ class_name ItemData
 
 # Optional links
 @export var gun_resource: GunResource
+@export var ammo_resource: AmmoResource
+
+# Runtime ammo count (only used if ammo_resource != null)
+@export var ammo_amount: int = 0

@@ -4,6 +4,7 @@ extends Area2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var chest_inventory_scene: PackedScene
+@export var inventory_data: InventoryData
 
 var ui_instance: Control
 var player_inside := false
@@ -28,26 +29,34 @@ func _input(event):
 
 func toggle_chest():
 	var players = get_tree().get_nodes_in_group("player")
-	if players.size() == 0:
-		push_warning("No player found in scene!")
+	if players.size() == 0: 
 		return
 	var player = players[0]
 
 	if ui_instance:
+		# CLOSE CHEST
 		if ui_instance.has_method("cleanup"):
-			ui_instance.cleanup()
+			ui_instance.cleanup() # This now triggers the SAVE
+		
 		ui_instance.queue_free()
 		ui_instance = null
 		player.inventory_open = false
+		
+		GameplayState.inventory_open = false # Ensure global state is reset
+		animation_player.play("close", 0.0, 1.0)
+		
 	else:
+		# OPEN CHEST
 		ui_instance = chest_inventory_scene.instantiate()
 		get_tree().root.add_child(ui_instance)
-		if ui_instance.has_method("rebuild"):
-			ui_instance.rebuild()
-		player.inventory_open = true
 		
-		if ui_instance.has_method("rebuild"):
-			ui_instance.rebuild()
+		# INJECT DATA HERE
+		if ui_instance.has_method("set_inventory_data"):
+			ui_instance.set_inventory_data(player.inventory_data, self.inventory_data)
+		
+		player.inventory_open = true
+		GameplayState.inventory_open = true # Ensure global state is set
+		animation_player.play("open", 0.0, 1.0)
 
 func _on_body_entered(body):
 	if body.name == "Player":

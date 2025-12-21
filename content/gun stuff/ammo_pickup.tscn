@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw0efamf63rfg"]
+
+[ext_resource type="Script" uid="uid://s8n3p7fpyof4" path="res://content/gun stuff/ammo_pickup.gd" id="1_dxks1"]
+[ext_resource type="Resource" uid="uid://ckbvaa1gcyf5d" path="res://content/gun stuff/ammo resources/shells.tres" id="2_fcggs"]
+[ext_resource type="Texture2D" uid="uid://b15rcmmwpn120" path="res://content/UI/Inventory/sprites/shotgun ammo_d.png" id="3_nx1yi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcggs"]
+
+[node name="ammo_pickup" type="Area2D"]
+script = ExtResource("1_dxks1")
+ammo_resource = ExtResource("2_fcggs")
+pickup_amount = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fcggs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_nx1yi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

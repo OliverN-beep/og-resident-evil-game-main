@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://0ir2chnqb0xe"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://0ir2chnqb0xe"]
 
+[ext_resource type="Resource" uid="uid://cq1xem5kwd3ys" path="res://content/gun stuff/gun resources/rifle_resource.tres" id="1_fw6k1"]
 [ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_ofnnr"]
 [ext_resource type="Texture2D" uid="uid://4akdm2dyv48q" path="res://content/UI/Inventory/sprites/rifle_d.png" id="2_p76gb"]
 
@@ -8,4 +9,5 @@ script = ExtResource("1_ofnnr")
 name = "Rifle"
 texture = ExtResource("2_p76gb")
 dimensions = Vector2i(4, 1)
+gun_resource = ExtResource("1_fw6k1")
 metadata/_custom_type_script = "uid://dttjy8l3fgchc"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BulletComponent" load_steps=4 format=3 uid="uid://cfndti8ly6mf7"]
+
+[ext_resource type="Texture2D" uid="uid://cgn7cy3c1j163" path="res://content/bullets/projectile_1.tres" id="1_8midl"]
+[ext_resource type="Script" uid="uid://mbxb1alct6gm" path="res://content/components/bullet/bullet_component.gd" id="1_sdems"]
+[ext_resource type="Texture2D" uid="uid://c6g6mfudtp37m" path="res://content/bullets/projectile_2.tres" id="2_18cyk"]
+
+[resource]
+script = ExtResource("1_sdems")
+bullet_speed = 400.0
+fire_rate = 0.1
+bullet_type = 1
+bullet_type_array = Array[Texture2D]([ExtResource("1_8midl"), ExtResource("2_18cyk")])
+metadata/_custom_type_script = "uid://mbxb1alct6gm"
