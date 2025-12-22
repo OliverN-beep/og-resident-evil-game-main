@@ -11,3 +11,4 @@ class_name ItemData
 
 # Runtime ammo count (only used if ammo_resource != null)
 @export var ammo_amount: int = 0
+@export var loaded_ammo: int = -1

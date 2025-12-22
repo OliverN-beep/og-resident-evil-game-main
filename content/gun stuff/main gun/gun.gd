@@ -22,20 +22,25 @@ var inventory_data: InventoryData
 var current_ammo := 0
 var is_reloading := false
 
+var gun_item_data: ItemData
+
 func _ready() -> void:
 	torchlight.visible = false
 
-func set_gun_resource(res: GunResource) -> void:
+func set_gun_resource(res: GunResource, item_data: ItemData) -> void:
 	gun_resource = res
-	
-	# Duplicate the resource to prevent shared state issues
+	gun_item_data = item_data
+
 	bullet_component = res.bullet_component.duplicate() as BulletComponent
-	
-	# Reset gun stats
 	shoot_timer.wait_time = bullet_component.fire_rate
 	recoil = 0.0
-	current_ammo = res.magazine_size
 	is_reloading = false
+
+	if gun_item_data.loaded_ammo >= 0:
+		current_ammo = gun_item_data.loaded_ammo
+	else:
+		current_ammo = res.magazine_size
+		gun_item_data.loaded_ammo = current_ammo
 
 func _physics_process(delta: float) -> void:
 	# Safety to prevent crashes
@@ -119,6 +124,9 @@ func _fire_weapon():
 	shoot_timer.start()
 	
 	shoot_timer.start()
+	
+	if gun_item_data:
+		gun_item_data.loaded_ammo = current_ammo
 
 func _fire_burst():
 	for i in bullet_component.burst_count:
@@ -187,3 +195,6 @@ func _reload():
 	
 	if not inventory_data.has_ammo(gun_resource.ammo_type):
 		return
+	
+	if gun_item_data:
+		gun_item_data.loaded_ammo = current_ammo

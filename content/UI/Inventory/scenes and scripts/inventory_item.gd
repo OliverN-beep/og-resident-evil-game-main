@@ -20,10 +20,15 @@ var anchor_point: Vector2:
 		return global_position - size / 2
 
 func _ready() -> void:
+	if data.dimensions == Vector2i.ZERO:
+		push_warning("Item '%s' has no dimensions, defaulting to 1x1" % data.name)
+		data.dimensions = Vector2i(1, 1)
+
 	base_dimensions = data.dimensions
 	texture = data.texture
 	rotation_degrees = 0
 	_update_stack_label()
+
 
 func _update_stack_label() -> void:
 	if data.ammo_resource:

@@ -111,7 +111,7 @@ func equip_gun(item: ItemData):
 	
 	# Assign the gun resource to this instance
 	if gun_instance.has_method("set_gun_resource"):
-		gun_instance.set_gun_resource(item.gun_resource)
+		gun_instance.set_gun_resource(item.gun_resource, item)
 	
 	# Ensure the gun uses the player's inventory
 	gun_instance.inventory_data = inventory_data

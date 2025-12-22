@@ -35,12 +35,12 @@ func take_ammo(ammo_type: String, amount: int) -> int:
 
 	return amount - remaining
 
-
-func add_ammo(ammo_res: AmmoResource, amount: int) -> int:
+func add_ammo(ammo_res: AmmoResource, amount: int) -> Array[ItemData]:
 	var remaining: int = amount
+	var new_items: Array[ItemData] = []
 
 	# Fill existing stacks
-	for item in items:
+	for item: ItemData in items:
 		if item.ammo_resource != ammo_res:
 			continue
 
@@ -53,22 +53,24 @@ func add_ammo(ammo_res: AmmoResource, amount: int) -> int:
 		remaining -= added
 
 		if remaining <= 0:
-			return 0
+			return new_items
 
 	# Create new stacks
 	while remaining > 0:
-		var new_item := ItemData.new()
+		var new_item: ItemData = ItemData.new()
 		new_item.name = ammo_res.ammo_type
 		new_item.texture = ammo_res.icon
 		new_item.ammo_resource = ammo_res
+		new_item.dimensions = Vector2i(1, 1)
 
 		var added: int = min(ammo_res.max_stack, remaining)
 		new_item.ammo_amount = added
 		remaining -= added
 
 		items.append(new_item)
-
-	return remaining
+		new_items.append(new_item)
+	
+	return new_items
 
 func get_ammo_stack_count(ammo_type: String) -> int:
 	var count := 0

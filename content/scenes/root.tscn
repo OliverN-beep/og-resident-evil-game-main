@@ -19,7 +19,7 @@ center_offset = Vector3(640, 360, 0)
 script = ExtResource("1_l0ysy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(3.5, 3.5)
 script = ExtResource("2_ym51k")
 
 [node name="Player" parent="." instance=ExtResource("1_870w3")]
