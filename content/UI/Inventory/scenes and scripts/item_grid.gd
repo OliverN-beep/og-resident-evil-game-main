@@ -25,6 +25,10 @@ func _create_slots() -> void:
 			var inventory_slot = inventory_slot_scene.instantiate()
 			add_child(inventory_slot)
 
+func _init_slot_data() -> void:
+	slot_data.resize(grid_dimensions.x * grid_dimensions.y)
+	slot_data.fill(null)
+
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.is_pressed():
@@ -117,10 +121,6 @@ func items_in_area(index: int, item_dimensions: Vector2i) -> Array:
 			if !items.has(item):
 				items[item] = true
 	return items.keys() if items.size() else []
-
-func _init_slot_data() -> void:
-	slot_data.resize(grid_dimensions.x * grid_dimensions.y)
-	slot_data.fill(null)
 
 func _attempt_to_add_item_data(item: Node) -> bool:
 	var slot_index: int = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0tug1d4vbg01"]
+[gd_scene load_steps=10 format=3 uid="uid://b0tug1d4vbg01"]
 
 [ext_resource type="PackedScene" uid="uid://c2s4ny8o5mfwq" path="res://content/entities/player/player.tscn" id="1_870w3"]
 [ext_resource type="Script" uid="uid://dhfskdopey63c" path="res://content/scenes/root.gd" id="1_l0ysy"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bwxx5o7t2km2l" path="res://content/scripts/player_camera.gd" id="2_ym51k"]
 [ext_resource type="PackedScene" uid="uid://cclxpyg7phsn4" path="res://content/UI/Pause Menu/pause_menu.tscn" id="3_dj6qu"]
 [ext_resource type="PackedScene" uid="uid://v82etf4nwkf4" path="res://content/scenes/playablemap_1.tscn" id="6_h05mm"]
-[ext_resource type="PackedScene" uid="uid://cw0efamf63rfg" path="res://content/gun stuff/ammo_pickup.tscn" id="8_13l5x"]
 [ext_resource type="Shader" uid="uid://qbdj5m885et7" path="res://content/shaders/screen_effect.gdshader" id="8_gmax0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_13l5x"]
@@ -42,6 +41,3 @@ mesh = SubResource("QuadMesh_oorap")
 [node name="darkness tint" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0.34781694, 0.34781697, 0.3478169, 1)
-
-[node name="ammo_pickup" parent="." instance=ExtResource("8_13l5x")]
-position = Vector2(3, 85)

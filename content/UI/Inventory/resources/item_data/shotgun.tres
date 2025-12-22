@@ -12,4 +12,3 @@ texture = ExtResource("4_5wt8x")
 dimensions = Vector2i(4, 2)
 gun_resource = ExtResource("2_ayref")
 ammo_resource = ExtResource("1_6ls0a")
-ammo_amount = 4

@@ -99,25 +99,24 @@ func apply_knockback(direction: Vector2, force: float, knockback_duration: float
 func equip_gun(item: ItemData):
 	if item == null or item.gun_resource == null:
 		return
-
+	
 	# Free old gun
 	if gun_instance:
 		gun_instance.queue_free()
 		gun_instance = null
-
+	
 	# Instantiate new gun
 	gun_instance = item.gun_resource.gun_scene.instantiate()
 	add_child(gun_instance)
-
+	
 	# Assign the gun resource to this instance
 	if gun_instance.has_method("set_gun_resource"):
 		gun_instance.set_gun_resource(item.gun_resource)
-
+	
 	# Ensure the gun uses the player's inventory
 	gun_instance.inventory_data = inventory_data
-
+	
 	equipped_gun_item = item
-
 
 func toggle_player_inventory():
 	if inventory_ui_instance:
@@ -135,7 +134,7 @@ func toggle_player_inventory():
 	else:
 		if not GameplayState.can_act():
 			return 
-
+		
 		inventory_ui_instance = player_inventory_scene.instantiate()
 		get_tree().root.add_child(inventory_ui_instance)
 		

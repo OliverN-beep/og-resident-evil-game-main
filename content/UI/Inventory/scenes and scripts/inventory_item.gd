@@ -38,6 +38,7 @@ func _process(_delta: float) -> void:
 func set_init_position(pos: Vector2) -> void:
 	position = pos + size / 2  # local position relative to parent (GridContainer)
 
+
 func get_picked_up() -> void:
 	add_to_group("held_item")
 	is_picked = true

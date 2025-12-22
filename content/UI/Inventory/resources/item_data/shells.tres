@@ -10,4 +10,3 @@ name = "Shells"
 texture = ExtResource("2_denlb")
 dimensions = Vector2i(1, 1)
 ammo_resource = ExtResource("1_a3c5g")
-ammo_amount = 4

@@ -21,7 +21,10 @@ func _add_item(item_data: ItemData) -> void:
 func add_item(data: ItemData):
 	var item = inventory_item_scene.instantiate()
 	item.data = data
-	add_child(item)
+	
+	# Parent to grid first
+	item_grid.add_child(item)
+	
 	item_grid._attempt_to_add_item_data(item)
 
 func cleanup():
