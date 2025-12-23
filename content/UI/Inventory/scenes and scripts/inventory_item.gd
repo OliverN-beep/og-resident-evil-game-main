@@ -31,6 +31,7 @@ func _ready() -> void:
 
 func _update_stack_label() -> void:
 	# AMMO STACKS
+	if data.ammo_resource != null:
 		stack_label.text = str(data.ammo_amount)
 		return
 	
