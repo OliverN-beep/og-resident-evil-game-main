@@ -6,6 +6,8 @@ const bullet_scene = preload("res://content/bullets/bullet.tscn")
 @onready var torchlight: PointLight2D = $RotationOffset/torchlight
 @onready var shoot_timer: Timer = $ShootTimer
 
+signal ammo_changed(current: int)
+
 # Booleans
 var can_shoot := true
 var torchlight_on := false
@@ -72,6 +74,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("reload"):
 		_try_reload()
+		print ("reload pressed")
 	
 	if Input.is_action_just_pressed("torchlight"):
 		torchlight_on = !torchlight_on
@@ -108,12 +111,16 @@ func _on_shoot_timer_timeout() -> void:
 	can_shoot = true
 
 func _fire_weapon():
+	if is_reloading:
+		return
+
 	if current_ammo <= 0:
-		_try_reload()
+		print("Out of ammo")
 		return
 	
 	can_shoot = false
 	current_ammo -= 1
+	ammo_changed.emit(current_ammo)
 	
 	match bullet_component.fire_mode:
 		BulletComponent.FireMode.BURST:
@@ -171,30 +178,55 @@ func _shoot_once():
 func _try_reload():
 	if is_reloading:
 		return
-	
+
 	if current_ammo >= gun_resource.magazine_size:
 		return
-	
-	if !inventory_data:
+
+	if inventory_data == null:
 		return
-	
-	if !inventory_data.has_ammo(gun_resource.ammo_type):
+
+	if not inventory_data.has_ammo(gun_resource.ammo_type):
 		return
 	
 	_reload()
+	
+	print("Reload pressed. Has ammo:",
+		inventory_data.has_ammo(gun_resource.ammo_type),
+		"Current:", current_ammo
+	)
 
 func _reload():
 	is_reloading = true
 	await get_tree().create_timer(gun_resource.reload_time).timeout
-	
-	var needed := gun_resource.magazine_size - current_ammo
-	var taken := inventory_data.take_ammo(gun_resource.ammo_type, needed)
-	
-	current_ammo += taken
-	is_reloading = false
-	
-	if not inventory_data.has_ammo(gun_resource.ammo_type):
+
+	var needed: int = gun_resource.magazine_size - current_ammo
+	if needed <= 0:
+		is_reloading = false
 		return
-	
+
+	var taken: int = inventory_data.take_ammo(
+		gun_resource.ammo_type,
+		needed
+	)
+
+	if taken <= 0:
+		is_reloading = false
+		return
+
+	current_ammo += taken
+
 	if gun_item_data:
 		gun_item_data.loaded_ammo = current_ammo
+
+	is_reloading = false
+	ammo_changed.emit(current_ammo)
+
+func setup_from_item(item_data: ItemData):
+	gun_item_data = item_data
+	gun_resource = item_data.gun_resource
+
+	if item_data.loaded_ammo < 0:
+		current_ammo = gun_resource.magazine_size
+		item_data.loaded_ammo = current_ammo
+	else:
+		current_ammo = item_data.loaded_ammo

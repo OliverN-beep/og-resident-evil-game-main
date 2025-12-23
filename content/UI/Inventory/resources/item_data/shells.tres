@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dyeid5byoipmj"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dyeid5byoipmj"]
 
-[ext_resource type="Resource" uid="uid://ckbvaa1gcyf5d" path="res://content/gun stuff/ammo resources/shells.tres" id="1_a3c5g"]
 [ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_y71cw"]
 [ext_resource type="Texture2D" uid="uid://b15rcmmwpn120" path="res://content/UI/Inventory/sprites/shotgun ammo_d.png" id="2_denlb"]
 
@@ -9,4 +8,3 @@ script = ExtResource("1_y71cw")
 name = "Shells"
 texture = ExtResource("2_denlb")
 dimensions = Vector2i(1, 1)
-ammo_resource = ExtResource("1_a3c5g")

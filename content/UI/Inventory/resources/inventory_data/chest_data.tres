@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryData" load_steps=5 format=3 uid="uid://bchg0eh6w78r1"]
 
 [ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_13xx3"]
-[ext_resource type="Resource" uid="uid://c52thd5g3dyps" path="res://content/UI/Inventory/resources/item_data/shotgun.tres" id="2_2y4p2"]
+[ext_resource type="Resource" uid="uid://0ir2chnqb0xe" path="res://content/UI/Inventory/resources/item_data/rifle.tres" id="2_2y4p2"]
 [ext_resource type="Script" uid="uid://c141oo1kmrq0a" path="res://content/resources/inventory_data.gd" id="2_jl3ch"]
-[ext_resource type="Resource" uid="uid://dyeid5byoipmj" path="res://content/UI/Inventory/resources/item_data/shells.tres" id="3_612f7"]
+[ext_resource type="Resource" uid="uid://bfqdnpupf03j1" path="res://content/UI/Inventory/resources/item_data/medkit.tres" id="3_612f7"]
 
 [resource]
 script = ExtResource("2_jl3ch")

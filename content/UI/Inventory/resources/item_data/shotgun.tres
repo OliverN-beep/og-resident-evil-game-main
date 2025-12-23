@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://c52thd5g3dyps"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://c52thd5g3dyps"]
 
-[ext_resource type="Resource" uid="uid://ckbvaa1gcyf5d" path="res://content/gun stuff/ammo resources/shells.tres" id="1_6ls0a"]
 [ext_resource type="Resource" uid="uid://mr1r7ilf3pst" path="res://content/gun stuff/gun resources/shotgun_resource.tres" id="2_ayref"]
 [ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="3_fdwh3"]
 [ext_resource type="Texture2D" uid="uid://cbdc6d4tesux5" path="res://content/UI/Inventory/sprites/shotgun_d.png" id="4_5wt8x"]
@@ -11,4 +10,3 @@ name = "Shotgun"
 texture = ExtResource("4_5wt8x")
 dimensions = Vector2i(4, 2)
 gun_resource = ExtResource("2_ayref")
-ammo_resource = ExtResource("1_6ls0a")

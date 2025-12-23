@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=6 format=3 uid="uid://dhmfenv3waduj"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=5 format=3 uid="uid://dhmfenv3waduj"]
 
 [ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_i21hx"]
 [ext_resource type="Script" uid="uid://c141oo1kmrq0a" path="res://content/resources/inventory_data.gd" id="2_5cfv2"]
 [ext_resource type="Resource" uid="uid://chmahi0wef31" path="res://content/UI/Inventory/resources/item_data/handgun.tres" id="2_8byrv"]
-[ext_resource type="Resource" uid="uid://bfqdnpupf03j1" path="res://content/UI/Inventory/resources/item_data/medkit.tres" id="3_7c1h7"]
-[ext_resource type="Resource" uid="uid://0ir2chnqb0xe" path="res://content/UI/Inventory/resources/item_data/rifle.tres" id="4_7c1h7"]
+[ext_resource type="Resource" uid="uid://c52thd5g3dyps" path="res://content/UI/Inventory/resources/item_data/shotgun.tres" id="3_8byrv"]
 
 [resource]
 script = ExtResource("2_5cfv2")
-items = Array[ExtResource("1_i21hx")]([ExtResource("2_8byrv"), ExtResource("3_7c1h7"), ExtResource("4_7c1h7")])
+items = Array[ExtResource("1_i21hx")]([ExtResource("2_8byrv"), ExtResource("3_8byrv")])
 metadata/_custom_type_script = "uid://c141oo1kmrq0a"

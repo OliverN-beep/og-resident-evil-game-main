@@ -117,6 +117,9 @@ func equip_gun(item: ItemData):
 	gun_instance.inventory_data = inventory_data
 	
 	equipped_gun_item = item
+	
+	if gun_instance.has_signal("ammo_changed"):
+		gun_instance.ammo_changed.connect(_on_gun_ammo_changed)
 
 func toggle_player_inventory():
 	if inventory_ui_instance:
@@ -147,3 +150,11 @@ func toggle_player_inventory():
 		# Pause movement/gameplay
 		GameplayState.inventory_open = true
 		inventory_open = true
+
+func _on_gun_ammo_changed(new_amount: int) -> void:
+	if equipped_gun_item:
+		equipped_gun_item.loaded_ammo = new_amount
+
+	# Refresh inventory UI labels
+	for ui in get_tree().get_nodes_in_group("inventory_ui"):
+		ui.rebuild()

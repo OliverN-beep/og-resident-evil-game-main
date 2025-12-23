@@ -29,12 +29,22 @@ func _ready() -> void:
 	rotation_degrees = 0
 	_update_stack_label()
 
-
 func _update_stack_label() -> void:
-	if data.ammo_resource:
+	# AMMO STACKS
 		stack_label.text = str(data.ammo_amount)
-	else:
-		stack_label.text = ""
+		return
+	
+	# GUN MAGAZINE
+	if data.gun_resource != null:
+		var mag_size := data.gun_resource.magazine_size
+		
+		if data.loaded_ammo < 0:
+			stack_label.text = "%d / %d" % [mag_size, mag_size]
+		else:
+			stack_label.text = "%d / %d" % [data.loaded_ammo, mag_size]
+		return
+	
+	stack_label.text = ""
 
 func _process(_delta: float) -> void:
 	if is_picked:

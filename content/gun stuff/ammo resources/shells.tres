@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_shaxs")
-ammo_type = "shells"
+ammo_type = "SHELLS"
 max_stack = 2
 icon = ExtResource("1_bm7il")
 metadata/_custom_type_script = "uid://dh60oul8u5ttv"

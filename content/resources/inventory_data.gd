@@ -4,23 +4,20 @@ class_name InventoryData
 @export var items: Array[ItemData] = []
 
 func has_ammo(ammo_type: String) -> bool:
-	for item in items:
+	for item: ItemData in items:
 		if item.ammo_resource == null:
 			continue
 		if item.ammo_resource.ammo_type == ammo_type and item.ammo_amount > 0:
 			return true
 	return false
 
-
 func take_ammo(ammo_type: String, amount: int) -> int:
-	var remaining: int = amount
+	var remaining := amount
 
-	for item in items:
+	for item in items.duplicate():
 		if item.ammo_resource == null:
 			continue
 		if item.ammo_resource.ammo_type != ammo_type:
-			continue
-		if item.ammo_amount <= 0:
 			continue
 
 		var taken: int = min(item.ammo_amount, remaining)
@@ -34,6 +31,7 @@ func take_ammo(ammo_type: String, amount: int) -> int:
 			break
 
 	return amount - remaining
+
 
 func add_ammo(ammo_res: AmmoResource, amount: int) -> Array[ItemData]:
 	var remaining: int = amount
