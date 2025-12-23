@@ -36,10 +36,10 @@ func rebuild() -> void:
 	for child in get_children():
 		if child is Sprite2D:
 			child.queue_free()
-
+	
 	# Reset grid state
 	item_grid.clear_grid()
-
+	
 	# Re-add items from data
 	for item_data in inventory_data.items:
 		_add_item(item_data)

@@ -32,12 +32,12 @@ func _ready() -> void:
 func set_gun_resource(res: GunResource, item_data: ItemData) -> void:
 	gun_resource = res
 	gun_item_data = item_data
-
+	
 	bullet_component = res.bullet_component.duplicate() as BulletComponent
 	shoot_timer.wait_time = bullet_component.fire_rate
 	recoil = 0.0
 	is_reloading = false
-
+	
 	if gun_item_data.loaded_ammo >= 0:
 		current_ammo = gun_item_data.loaded_ammo
 	else:
@@ -68,7 +68,7 @@ func _physics_process(delta: float) -> void:
 			wants_to_fire = Input.is_action_pressed("shoot")
 		BulletComponent.FireMode.BURST:
 			wants_to_fire = Input.is_action_just_pressed("shoot")
-
+	
 	if wants_to_fire and can_shoot:
 		_fire_weapon()
 	
@@ -113,7 +113,7 @@ func _on_shoot_timer_timeout() -> void:
 func _fire_weapon():
 	if is_reloading:
 		return
-
+	
 	if current_ammo <= 0:
 		print("Out of ammo")
 		return
@@ -178,13 +178,13 @@ func _shoot_once():
 func _try_reload():
 	if is_reloading:
 		return
-
+	
 	if current_ammo >= gun_resource.magazine_size:
 		return
-
+	
 	if inventory_data == null:
 		return
-
+	
 	if not inventory_data.has_ammo(gun_resource.ammo_type):
 		return
 	
@@ -198,33 +198,33 @@ func _try_reload():
 func _reload():
 	is_reloading = true
 	await get_tree().create_timer(gun_resource.reload_time).timeout
-
+	
 	var needed: int = gun_resource.magazine_size - current_ammo
 	if needed <= 0:
 		is_reloading = false
 		return
-
+	
 	var taken: int = inventory_data.take_ammo(
 		gun_resource.ammo_type,
 		needed
 	)
-
+	
 	if taken <= 0:
 		is_reloading = false
 		return
-
+	
 	current_ammo += taken
-
+	
 	if gun_item_data:
 		gun_item_data.loaded_ammo = current_ammo
-
+	
 	is_reloading = false
 	ammo_changed.emit(current_ammo)
 
 func setup_from_item(item_data: ItemData):
 	gun_item_data = item_data
 	gun_resource = item_data.gun_resource
-
+	
 	if item_data.loaded_ammo < 0:
 		current_ammo = gun_resource.magazine_size
 		item_data.loaded_ammo = current_ammo

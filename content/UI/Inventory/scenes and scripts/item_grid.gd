@@ -125,7 +125,7 @@ func items_in_area(index: int, item_dimensions: Vector2i) -> Array:
 func _attempt_to_add_item_data(item: Node) -> bool:
 	var slot_index: int = 0
 	var dims = item.get_dimensions()
-
+	
 	# Try default orientation
 	while slot_index < slot_data.size():
 		if _item_fits(slot_index, dims):
@@ -138,7 +138,7 @@ func _attempt_to_add_item_data(item: Node) -> bool:
 			item.set_auto_rotated(false)
 			return true
 		slot_index += 1
-
+	
 	# Try rotated orientation
 	item.is_rotated = true
 	item.update_visual_rotation()
@@ -153,7 +153,7 @@ func _attempt_to_add_item_data(item: Node) -> bool:
 			item.set_init_position(_get_coords_from_slot_index(slot_index))
 			return true
 		slot_index += 1
-
+	
 	# Could not fit
 	item.is_rotated = false
 	item.update_visual_rotation()
@@ -161,7 +161,6 @@ func _attempt_to_add_item_data(item: Node) -> bool:
 	push_error("Inventory full: Could not add item '%s' (size %dx%d)" %
 		[item.data.name, item.data.dimensions.x, item.data.dimensions.y])
 	return false
-
 
 func _item_fits(index: int, dimensions: Vector2i) -> bool:
 	for y in dimensions.y:

@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://d0fb2wwovs8ov" path="res://content/components/bullet/shotgun_bullet.tres" id="1_guwwn"]
 [ext_resource type="PackedScene" uid="uid://dm8x4slcstgn0" path="res://content/gun stuff/main gun/gun.tscn" id="1_v58vk"]
 [ext_resource type="Texture2D" uid="uid://cbdc6d4tesux5" path="res://content/UI/Inventory/sprites/shotgun_d.png" id="2_guwwn"]
-[ext_resource type="Script" uid="uid://clkhwh0wmh042" path="res://content/gun stuff/gun_resource.gd" id="3_6dfnf"]
+[ext_resource type="Script" uid="uid://clkhwh0wmh042" path="res://content/gun stuff/resource scripts/gun_resource.gd" id="3_6dfnf"]
 
 [resource]
 script = ExtResource("3_6dfnf")

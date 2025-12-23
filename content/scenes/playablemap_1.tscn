@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://v82etf4nwkf4"]
+[gd_scene load_steps=33 format=4 uid="uid://v82etf4nwkf4"]
 
 [ext_resource type="Shader" uid="uid://cx7b7qgxf0iyn" path="res://content/shaders/reflective_water.gdshader" id="1_40eyp"]
 [ext_resource type="Texture2D" uid="uid://bv4ftqali5shi" path="res://content/tilesets/snowy chalet/snowy chalet.tres" id="1_npjkf"]
@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://clpkh8umny85a" path="res://content/decorations/grass/grass_field_back.tscn" id="6_xk1ev"]
 [ext_resource type="PackedScene" uid="uid://bnx4iue3xhc58" path="res://content/decorations/grass/grass_field_front.tscn" id="7_xk1ev"]
 [ext_resource type="Texture2D" uid="uid://b206b0o6wgudo" path="res://content/lights/point light.png" id="8_1s3rh"]
-[ext_resource type="PackedScene" uid="uid://cw0efamf63rfg" path="res://content/gun stuff/ammo_pickup.tscn" id="8_vb41g"]
+[ext_resource type="PackedScene" uid="uid://cw0efamf63rfg" path="res://content/gun stuff/ammo pickups/shells_pickup.tscn" id="8_vb41g"]
 [ext_resource type="PackedScene" uid="uid://cj1whb32q672x" path="res://content/decorations/torch/torch.tscn" id="11_0m7jx"]
+[ext_resource type="PackedScene" uid="uid://8y83pqs074vb" path="res://content/gun stuff/ammo pickups/9_mm_pickup.tscn" id="14_ateym"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xk1ev"]
 texture = ExtResource("1_npjkf")
@@ -277,3 +278,12 @@ position = Vector2(58, 71)
 
 [node name="ammo_pickup3" parent="." instance=ExtResource("8_vb41g")]
 position = Vector2(-48, 72)
+
+[node name="9mm_pickup" parent="." instance=ExtResource("14_ateym")]
+position = Vector2(-121, 62)
+
+[node name="9mm_pickup2" parent="." instance=ExtResource("14_ateym")]
+position = Vector2(-156, 39)
+
+[node name="9mm_pickup3" parent="." instance=ExtResource("14_ateym")]
+position = Vector2(-119, 35)

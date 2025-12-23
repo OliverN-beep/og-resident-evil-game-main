@@ -10,5 +10,3 @@ name = "Handgun"
 texture = ExtResource("3_lyb4o")
 dimensions = Vector2i(2, 2)
 gun_resource = ExtResource("1_iiqs1")
-ammo_type = "9mm"
-ammo_amount = 15

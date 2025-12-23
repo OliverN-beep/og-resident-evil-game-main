@@ -54,13 +54,11 @@ func _process(_delta: float) -> void:
 func set_init_position(pos: Vector2) -> void:
 	position = pos + size / 2  # local position relative to parent (GridContainer)
 
-
 func get_picked_up() -> void:
 	add_to_group("held_item")
 	is_picked = true
 	z_index = 10
 	set_auto_rotated(false)
-
 
 func get_placed(pos: Vector2i) -> void:
 	is_picked = false
@@ -76,7 +74,7 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_RIGHT and is_picked:
 			do_rotation()
 			return
-
+		
 		# LEFT CLICK — select / equip when NOT dragging
 		if event.button_index == MOUSE_BUTTON_LEFT and not is_picked:
 			_try_select()
@@ -84,17 +82,16 @@ func _input(event: InputEvent) -> void:
 func _try_select() -> void:
 	if not data:
 		return
-
+	
 	if data.gun_resource == null:
 		return
-
+	
 	# Only equip if parented to the player's inventory grid
 	var player_inventory := get_tree().get_first_node_in_group("player_inventory_grid")
 	if get_parent() != player_inventory:
 		return
-
+	
 	get_tree().call_group("player", "equip_gun", data)
-
 
 func do_rotation() -> void:
 	is_rotated = !is_rotated

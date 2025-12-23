@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="AmmoResource" load_steps=3 format=3 uid="uid://ckbvaa1gcyf5d"]
 
 [ext_resource type="Texture2D" uid="uid://b15rcmmwpn120" path="res://content/UI/Inventory/sprites/shotgun ammo_d.png" id="1_bm7il"]
-[ext_resource type="Script" uid="uid://dh60oul8u5ttv" path="res://content/gun stuff/ammo_resource.gd" id="1_shaxs"]
+[ext_resource type="Script" uid="uid://dh60oul8u5ttv" path="res://content/gun stuff/resource scripts/ammo_resource.gd" id="1_shaxs"]
 
 [resource]
 script = ExtResource("1_shaxs")
 ammo_type = "SHELLS"
-max_stack = 2
+max_stack = 3
 icon = ExtResource("1_bm7il")
 metadata/_custom_type_script = "uid://dh60oul8u5ttv"
