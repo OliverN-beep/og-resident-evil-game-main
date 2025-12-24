@@ -32,7 +32,6 @@ func take_ammo(ammo_type: String, amount: int) -> int:
 	
 	return amount - remaining
 
-
 func add_ammo(ammo_res: AmmoResource, amount: int) -> Array[ItemData]:
 	var remaining: int = amount
 	var new_items: Array[ItemData] = []
@@ -57,7 +56,7 @@ func add_ammo(ammo_res: AmmoResource, amount: int) -> Array[ItemData]:
 	while remaining > 0:
 		var new_item: ItemData = ItemData.new()
 		new_item.name = ammo_res.ammo_type
-		new_item.texture = ammo_res.icon
+		new_item.texture = ammo_res.inventory_icon
 		new_item.ammo_resource = ammo_res
 		new_item.dimensions = Vector2i(1, 1)
 		

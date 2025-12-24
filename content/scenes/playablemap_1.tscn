@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://v82etf4nwkf4"]
+[gd_scene load_steps=35 format=4 uid="uid://v82etf4nwkf4"]
 
 [ext_resource type="Shader" uid="uid://cx7b7qgxf0iyn" path="res://content/shaders/reflective_water.gdshader" id="1_40eyp"]
 [ext_resource type="Texture2D" uid="uid://bv4ftqali5shi" path="res://content/tilesets/snowy chalet/snowy chalet.tres" id="1_npjkf"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cw0efamf63rfg" path="res://content/gun stuff/ammo pickups/shells_pickup.tscn" id="8_vb41g"]
 [ext_resource type="PackedScene" uid="uid://cj1whb32q672x" path="res://content/decorations/torch/torch.tscn" id="11_0m7jx"]
 [ext_resource type="PackedScene" uid="uid://8y83pqs074vb" path="res://content/gun stuff/ammo pickups/9_mm_pickup.tscn" id="14_ateym"]
+[ext_resource type="PackedScene" uid="uid://c4e4skvybxwcq" path="res://content/gun stuff/ammo pickups/50_cal_pickup.tscn" id="15_wbhbn"]
+[ext_resource type="PackedScene" uid="uid://cc1kp8cqul45u" path="res://content/gun stuff/ammo pickups/5_56_mm_pickup.tscn" id="16_qbh1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xk1ev"]
 texture = ExtResource("1_npjkf")
@@ -287,3 +289,21 @@ position = Vector2(-156, 39)
 
 [node name="9mm_pickup3" parent="." instance=ExtResource("14_ateym")]
 position = Vector2(-119, 35)
+
+[node name="50cal_pickup" parent="." instance=ExtResource("15_wbhbn")]
+position = Vector2(-66, 37)
+
+[node name="50cal_pickup2" parent="." instance=ExtResource("15_wbhbn")]
+position = Vector2(-83, 69)
+
+[node name="5_56mm_pickup" parent="." instance=ExtResource("16_qbh1j")]
+position = Vector2(107, 56)
+
+[node name="5_56mm_pickup2" parent="." instance=ExtResource("16_qbh1j")]
+position = Vector2(93, 98)
+
+[node name="5_56mm_pickup3" parent="." instance=ExtResource("16_qbh1j")]
+position = Vector2(125, 96)
+
+[node name="5_56mm_pickup4" parent="." instance=ExtResource("16_qbh1j")]
+position = Vector2(95, 126)

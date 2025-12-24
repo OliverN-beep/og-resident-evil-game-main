@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="AmmoResource" load_steps=3 format=3 uid="uid://dkn2od7y22ca2"]
 
-[ext_resource type="Texture2D" uid="uid://b3dhehiubmit2" path="res://content/gun stuff/pickup sprites/9mm_d.png" id="1_avsvw"]
+[ext_resource type="Texture2D" uid="uid://dyhh2pec6xsc1" path="res://content/UI/Inventory/sprites/9mm_d.png" id="1_avsvw"]
 [ext_resource type="Script" uid="uid://dh60oul8u5ttv" path="res://content/gun stuff/resource scripts/ammo_resource.gd" id="1_m8nto"]
 
 [resource]
 script = ExtResource("1_m8nto")
 ammo_type = "9mm"
 max_stack = 8
-icon = ExtResource("1_avsvw")
+inventory_icon = ExtResource("1_avsvw")
 metadata/_custom_type_script = "uid://dh60oul8u5ttv"

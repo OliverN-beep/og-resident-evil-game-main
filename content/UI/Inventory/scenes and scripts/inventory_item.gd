@@ -40,9 +40,9 @@ func _update_stack_label() -> void:
 		var mag_size := data.gun_resource.magazine_size
 		
 		if data.loaded_ammo < 0:
-			stack_label.text = "%d / %d" % [mag_size, mag_size]
+			stack_label.text = "%d" % [mag_size]
 		else:
-			stack_label.text = "%d / %d" % [data.loaded_ammo, mag_size]
+			stack_label.text = "%d" % [data.loaded_ammo]
 		return
 	
 	stack_label.text = ""
@@ -69,7 +69,6 @@ func get_placed(pos: Vector2i) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-
 		# RIGHT CLICK — rotate while dragging (existing behavior)
 		if event.button_index == MOUSE_BUTTON_RIGHT and is_picked:
 			do_rotation()

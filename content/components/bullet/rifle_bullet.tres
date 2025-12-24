@@ -1,13 +1,14 @@
 [gd_resource type="Resource" script_class="BulletComponent" load_steps=4 format=3 uid="uid://cfndti8ly6mf7"]
 
 [ext_resource type="Texture2D" uid="uid://cgn7cy3c1j163" path="res://content/bullets/projectile_1.tres" id="1_8midl"]
-[ext_resource type="Script" uid="uid://mbxb1alct6gm" path="res://content/components/bullet/bullet_component.gd" id="1_sdems"]
 [ext_resource type="Texture2D" uid="uid://c6g6mfudtp37m" path="res://content/bullets/projectile_2.tres" id="2_18cyk"]
+[ext_resource type="Script" uid="uid://mbxb1alct6gm" path="res://content/gun stuff/resource scripts/bullet_component.gd" id="3_8midl"]
 
 [resource]
-script = ExtResource("1_sdems")
+script = ExtResource("3_8midl")
 bullet_speed = 400.0
 fire_rate = 0.1
+burst_count = 0
 bullet_type = 1
 bullet_type_array = Array[Texture2D]([ExtResource("1_8midl"), ExtResource("2_18cyk")])
 metadata/_custom_type_script = "uid://mbxb1alct6gm"

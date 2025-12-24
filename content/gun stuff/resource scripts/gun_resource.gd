@@ -3,7 +3,6 @@ class_name GunResource
 
 @export_group("Identity")
 @export var display_name: String
-@export var icon: Texture2D
 
 @export_group("Scene")
 @export var gun_scene: PackedScene

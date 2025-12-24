@@ -33,6 +33,7 @@ position = Vector2(-132, -46)
 [node name="playablemap1" parent="." instance=ExtResource("6_h05mm")]
 
 [node name="CRT Canvas" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CRT Canvas"]
 material = SubResource("ShaderMaterial_13l5x")

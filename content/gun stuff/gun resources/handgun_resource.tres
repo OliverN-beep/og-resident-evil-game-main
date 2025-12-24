@@ -12,6 +12,6 @@ icon = ExtResource("3_jc0fo")
 gun_scene = ExtResource("1_w1vhj")
 ammo_type = "9mm"
 magazine_size = 10
-reload_time = 0.1
+reload_time = 1.0
 bullet_component = ExtResource("1_fxrii")
 metadata/_custom_type_script = "uid://clkhwh0wmh042"
