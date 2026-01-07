@@ -27,3 +27,8 @@ func apply_bullet_component(bc: BulletComponent, dir: Vector2) -> void:
 		sprite.texture = bc.bullet_type_array[bc.bullet_type]
 	
 	set_physics_process(true)
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("damageable"):
+		print("Take damage")
+		queue_free()

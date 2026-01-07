@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var player_sprite: Sprite2D = $Sprite2D
 @onready var hearts_ui: Control = $HeartsUI
 @onready var health_component: HEALTH_COMPONENT = $Components/HEALTH_COMPONENT
+@onready var ui_layer: CanvasLayer = $CanvasLayer
 
 # Declare constants
 const MOVE_SPEED: int = 60
@@ -22,8 +23,8 @@ var gun_instance: Node2D
 @export_group("Inventory Settings")
 # The unique data for this player (Create a Resource file and assign it here!)
 @export var inventory_data: InventoryData 
-# The UI scene to spawn when pressing 'Tab/Inventory'
-@export var player_inventory_scene: PackedScene 
+# Inventory scene
+@export var player_inventory_scene: PackedScene
 
 # Track the open UI instance so we can close it later
 var inventory_ui_instance: Control = null
@@ -35,8 +36,12 @@ func _ready() -> void:
 	hearts_ui.max_health = health_component.max_health
 	hearts_ui.set_health(health_component.current_health)
 	
-	# Connect signal
+	# Connect health component signal
 	health_component.health_changed.connect(hearts_ui.set_health)
+	
+	if RoomChangeGlobal.Activate:
+		global_position = RoomChangeGlobal.player_pos
+		RoomChangeGlobal.Activate = false
 
 # Physics processes
 func _physics_process(delta: float) -> void:
@@ -136,10 +141,14 @@ func toggle_player_inventory():
 		
 	else:
 		if not GameplayState.can_act():
-			return 
+			return
+		
+		if player_inventory_scene == null:
+			push_error("PLAYER INVENTORY NOT ASSIGNED")
+			return
 		
 		inventory_ui_instance = player_inventory_scene.instantiate()
-		get_tree().root.add_child(inventory_ui_instance)
+		ui_layer.add_child(inventory_ui_instance)
 		
 		# INJECT THE DATA
 		# We assume the root of your player_inventory_scene has the inventory.gd script
@@ -158,3 +167,6 @@ func _on_gun_ammo_changed(new_amount: int) -> void:
 	# Refresh inventory UI labels
 	for ui in get_tree().get_nodes_in_group("inventory_ui"):
 		ui.rebuild()
+
+func _on_spawn(spawn_position: Vector2, _direction: String):
+	global_position = spawn_position

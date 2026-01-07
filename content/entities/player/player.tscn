@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dx86234kxp1ur" path="res://content/UI/Inventory/scenes and scripts/player_inventory.tscn" id="5_r5tfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1ecw"]
-size = Vector2(8, 10)
+size = Vector2(5, 5)
 
 [sub_resource type="Animation" id="Animation_t4ell"]
 length = 1.1
@@ -172,9 +172,10 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://content/entities/player/player2 (LIGHT).aseprite",
 "source_uid": 9192656548297357125
 }
-metadata/_aseprite_wizard_source_file_hash_ = "d9ec035c0fc7821a90e4addacc40ba4e"
+metadata/_aseprite_wizard_source_file_hash_ = "1fce92219bde7a8ae3f903fe47e94645"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 5)
 shape = SubResource("RectangleShape2D_u1ecw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -187,3 +188,5 @@ offset_left = -23.0
 offset_top = -37.0
 offset_right = -23.0
 offset_bottom = -37.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

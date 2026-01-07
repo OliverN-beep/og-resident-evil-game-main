@@ -1,0 +1,28 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dxlhif03skqix"]
+
+[ext_resource type="Texture2D" uid="uid://bkvqofcd5e3wi" path="res://content/tilesets/train/train.tres" id="1_h4trd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3irm"]
+texture = ExtResource("1_h4trd")
+5:4/0 = 0
+6:4/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+6:7/0 = 0
+6:8/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+11:10/0 = 0
+11:11/0 = 0
+9:10/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_e3irm")
