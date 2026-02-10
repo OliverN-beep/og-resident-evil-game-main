@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_sprite: Sprite2D = $Sprite2D
-@onready var hearts_ui: Control = $HeartsUI
+@onready var hearts_ui: Control = $CanvasLayer/HeartsUI
 @onready var health_component: HEALTH_COMPONENT = $Components/HEALTH_COMPONENT
 @onready var ui_layer: CanvasLayer = $CanvasLayer
 

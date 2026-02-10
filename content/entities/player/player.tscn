@@ -183,10 +183,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_piw5s")
 }
 
-[node name="HeartsUI" parent="." instance=ExtResource("5_55yfw")]
-offset_left = -23.0
-offset_top = -37.0
-offset_right = -23.0
-offset_bottom = -37.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+
+[node name="HeartsUI" parent="CanvasLayer" instance=ExtResource("5_55yfw")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
