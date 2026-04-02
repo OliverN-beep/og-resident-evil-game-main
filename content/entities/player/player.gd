@@ -132,7 +132,8 @@ func toggle_player_inventory():
 		# --- CLOSE INVENTORY ---
 		if inventory_ui_instance.has_method("cleanup"):
 			inventory_ui_instance.cleanup() # Save data before closing
-			
+		
+		# Hide inventory
 		inventory_ui_instance.queue_free()
 		inventory_ui_instance = null
 		
@@ -150,12 +151,6 @@ func toggle_player_inventory():
 		
 		inventory_ui_instance = player_inventory_scene.instantiate()
 		ui_layer.add_child(inventory_ui_instance)
-		
-		# INJECT THE DATA
-		# We assume the root of your player_inventory_scene has the inventory.gd script
-		# or a script that knows how to handle set_dynamic_data
-		if inventory_ui_instance.has_method("set_dynamic_data"):
-			inventory_ui_instance.set_dynamic_data(inventory_data)
 		
 		# Pause movement/gameplay
 		GameplayState.inventory_open = true

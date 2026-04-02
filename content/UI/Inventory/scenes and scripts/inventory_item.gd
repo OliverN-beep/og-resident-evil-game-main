@@ -3,6 +3,7 @@ extends Sprite2D
 const SLOT_SIZE = 16
 
 @onready var stack_label: Label = $StackLabel
+@onready var buttonmenu: VBoxContainer = $buttonmenu
 
 var data: ItemData
 var is_picked := false
@@ -28,6 +29,8 @@ func _ready() -> void:
 	texture = data.texture
 	rotation_degrees = 0
 	_update_stack_label()
+	
+	buttonmenu.visible = false
 
 func _update_stack_label() -> void:
 	# AMMO STACKS
@@ -61,7 +64,6 @@ func get_picked_up() -> void:
 	set_auto_rotated(false)
 
 func get_placed(pos: Vector2i) -> void:
-	is_picked = false
 	if is_rotated:
 		rotation_degrees = 90
 	else:
@@ -69,17 +71,18 @@ func get_placed(pos: Vector2i) -> void:
 	position = pos + Vector2i(size / 2)
 	z_index = 0
 	remove_from_group("held_item")
+	is_picked = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		# RIGHT CLICK = rotate while dragging
+		# Right click to rotate while dragging
 		if event.button_index == MOUSE_BUTTON_RIGHT and is_picked:
 			do_rotation()
 			return
 		
-		# LEFT CLICK = select / equip when not dragging
-		if event.button_index == MOUSE_BUTTON_LEFT and not is_picked:
-			_try_select()
+		# Left click to equip when not dragging
+		if event.button_index == MOUSE_BUTTON_RIGHT and !is_picked:
+			buttonmenu.visible = true
 
 func _try_select() -> void:
 	if not data:
@@ -125,3 +128,7 @@ func set_auto_rotated(rotated: bool) -> void:
 		modulate = Color(1, 1, 0.5, 1) # Slight yellow tint
 	else:
 		modulate = Color(1, 1, 1, 1)   # Reset to normal
+
+func _on_equip_pressed() -> void:
+	_try_select()
+	print("EQUIPPED")

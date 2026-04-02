@@ -21,9 +21,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Saveload="*res://content/scripts/saveload.gd"
-GameplayState="*res://content/scripts/gameplay_state.gd"
 RoomChangeGlobal="*res://content/scripts/RoomChangeGlobal.gd"
+GameplayState="*uid://bbuo1bj33nmbg"
 
 [display]
 

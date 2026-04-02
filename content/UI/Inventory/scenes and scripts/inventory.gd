@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 
 @onready var item_grid: GridContainer = %ItemGrid
 
