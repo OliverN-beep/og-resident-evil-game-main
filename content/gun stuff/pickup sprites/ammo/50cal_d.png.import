@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buuwabydvlasv"
-path="res://.godot/imported/inventory item 4.png-78140d8c242ba16c9e11d0a5df84b2cb.ctex"
+uid="uid://ch1pqhlpwiop2"
+path="res://.godot/imported/50cal_d.png-c342834d42e492158788d148e93f9bd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/UI/Inventory/sprites/placeholder/inventory item 4.png"
-dest_files=["res://.godot/imported/inventory item 4.png-78140d8c242ba16c9e11d0a5df84b2cb.ctex"]
+source_file="res://content/gun stuff/pickup sprites/ammo/50cal_d.png"
+dest_files=["res://.godot/imported/50cal_d.png-c342834d42e492158788d148e93f9bd7.ctex"]
 
 [params]
 

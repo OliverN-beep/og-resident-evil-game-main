@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0tug1d4vbg01"]
+[gd_scene format=3 uid="uid://b0tug1d4vbg01"]
 
 [ext_resource type="PackedScene" uid="uid://c2s4ny8o5mfwq" path="res://content/entities/player/player.tscn" id="1_870w3"]
 [ext_resource type="Script" uid="uid://bcmewpx6jj1us" path="res://content/scenes/root.gd" id="1_l0ysy"]
@@ -12,35 +12,34 @@
 shader = ExtResource("8_gmax0")
 
 [sub_resource type="QuadMesh" id="QuadMesh_oorap"]
-size = Vector2(1280, 720)
-center_offset = Vector3(640, 360, 0)
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
 
-[node name="root" type="Node2D"]
+[node name="root" type="Node2D" unique_id=1511020228]
 script = ExtResource("1_l0ysy")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2049426886]
+zoom = Vector2(4, 4)
 script = ExtResource("2_ym51k")
 
-[node name="Player" parent="." instance=ExtResource("1_870w3")]
-position = Vector2(251, 119)
-player_inventory_scene = null
+[node name="Player" parent="." unique_id=377094539 instance=ExtResource("1_870w3")]
+position = Vector2(-22, -19)
 
-[node name="test_enemy" parent="." instance=ExtResource("2_ikevl")]
+[node name="test_enemy" parent="." unique_id=873717417 instance=ExtResource("2_ikevl")]
 position = Vector2(-132, -46)
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_dj6qu")]
+[node name="PauseMenu" parent="." unique_id=2044829845 instance=ExtResource("3_dj6qu")]
 
-[node name="CRT Canvas" type="CanvasLayer" parent="."]
+[node name="CRT Canvas" type="CanvasLayer" parent="." unique_id=218196012]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CRT Canvas"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CRT Canvas" unique_id=542474959]
 material = SubResource("ShaderMaterial_13l5x")
 mesh = SubResource("QuadMesh_oorap")
 
-[node name="darkness tint" type="CanvasModulate" parent="."]
+[node name="darkness tint" type="CanvasModulate" parent="." unique_id=838675043]
 visible = false
 color = Color(0.34781694, 0.34781697, 0.3478169, 1)
 
-[node name="RoomHolder" type="Node2D" parent="."]
+[node name="RoomHolder" type="Node2D" parent="." unique_id=1089082552]
 
-[node name="playablemap1" parent="RoomHolder" instance=ExtResource("6_h05mm")]
+[node name="playablemap1" parent="RoomHolder" unique_id=291388285 instance=ExtResource("6_h05mm")]

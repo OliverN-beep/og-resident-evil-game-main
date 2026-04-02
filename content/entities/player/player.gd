@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_sprite: Sprite2D = $Sprite2D
@@ -138,7 +139,7 @@ func toggle_player_inventory():
 		# Resume movement/gameplay
 		GameplayState.inventory_open = false 
 		inventory_open = false
-		
+	
 	else:
 		if not GameplayState.can_act():
 			return
@@ -163,7 +164,7 @@ func toggle_player_inventory():
 func _on_gun_ammo_changed(new_amount: int) -> void:
 	if equipped_gun_item:
 		equipped_gun_item.loaded_ammo = new_amount
-
+	
 	# Refresh inventory UI labels
 	for ui in get_tree().get_nodes_in_group("inventory_ui"):
 		ui.rebuild()

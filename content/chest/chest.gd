@@ -7,7 +7,7 @@ extends Area2D
 @export var inventory_data: InventoryData
 
 var ui_instance: Control
-var player_inside := false
+var player_inside: bool = false
 
 func _ready() -> void:
 	interact_label.visible = false

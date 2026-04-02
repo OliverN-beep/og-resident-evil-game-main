@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2s4ny8o5mfwq"]
+[gd_scene format=3 uid="uid://c2s4ny8o5mfwq"]
 
 [ext_resource type="Script" uid="uid://b8f0ildxxit2b" path="res://content/entities/player/player.gd" id="1_cp3qr"]
 [ext_resource type="Script" uid="uid://dw5oefh5egyfm" path="res://content/components/health/health_component.gd" id="2_55yfw"]
@@ -133,20 +133,20 @@ _data = {
 &"full idle": SubResource("Animation_g15rv")
 }
 
-[node name="Player" type="CharacterBody2D" groups=["damageable", "player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1361683113 groups=["damageable", "player"]]
 z_index = 2
 script = ExtResource("1_cp3qr")
 inventory_data = ExtResource("2_r5tfu")
 player_inventory_scene = ExtResource("5_r5tfu")
 
-[node name="Components" type="Node" parent="."]
+[node name="Components" type="Node" parent="." unique_id=24048352]
 
-[node name="HEALTH_COMPONENT" type="Node" parent="Components"]
+[node name="HEALTH_COMPONENT" type="Node" parent="Components" unique_id=2054341854]
 script = ExtResource("2_55yfw")
 max_health = 6
 metadata/_custom_type_script = "uid://dw5oefh5egyfm"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1560330261]
 texture_filter = 1
 texture = ExtResource("3_t4ell")
 hframes = 7
@@ -172,22 +172,20 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://content/entities/player/player2 (LIGHT).aseprite",
 "source_uid": 9192656548297357125
 }
-metadata/_aseprite_wizard_source_file_hash_ = "1fce92219bde7a8ae3f903fe47e94645"
+metadata/_aseprite_wizard_source_file_hash_ = "4679c5dc368ac17d187ec49b5b2ad7b0"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387952141]
 position = Vector2(2, 5)
 shape = SubResource("RectangleShape2D_u1ecw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_piw5s")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1871789462]
+libraries/ = SubResource("AnimationLibrary_piw5s")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1895918916]
 scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 0, 0)
 
-[node name="HeartsUI" parent="CanvasLayer" instance=ExtResource("5_55yfw")]
+[node name="HeartsUI" parent="CanvasLayer" unique_id=1020109654 instance=ExtResource("5_55yfw")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

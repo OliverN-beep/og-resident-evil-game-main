@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwr5dlaxonf0o"
-path="res://.godot/imported/gun_d.png-ef5846cee6c55ebe1a16aebb065eb95a.ctex"
+uid="uid://drajh8f82exex"
+path="res://.godot/imported/burst_smg_d.png-5ada7ecbc5bdd5ec7d996eead4dc5736.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/gun stuff/main gun/gun_d.png"
-dest_files=["res://.godot/imported/gun_d.png-ef5846cee6c55ebe1a16aebb065eb95a.ctex"]
+source_file="res://content/gun stuff/pickup sprites/ammo/burst_smg_d.png"
+dest_files=["res://.godot/imported/burst_smg_d.png-5ada7ecbc5bdd5ec7d996eead4dc5736.ctex"]
 
 [params]
 

@@ -77,3 +77,19 @@ func get_ammo_stack_count(ammo_type: String) -> int:
 		if item.ammo_resource.ammo_type == ammo_type:
 			count += 1
 	return count
+
+func add_item(gun_res: GunResource) -> ItemData:
+	var new_item := ItemData.new()
+	
+	new_item.name = gun_res.display_name
+	new_item.texture = gun_res.inventory_icon
+	new_item.dimensions = gun_res.dimensions
+	
+	new_item.gun_resource = gun_res
+	new_item.ammo_resource = null
+	
+	# Default magazine state
+	new_item.loaded_ammo = gun_res.magazine_size
+	
+	items.append(new_item)
+	return new_item

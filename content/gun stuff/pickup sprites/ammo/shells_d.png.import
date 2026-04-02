@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jvxlopukifp"
-path="res://.godot/imported/inventory item 3.png-e56d1f41d770a69be71606745f0e8c67.ctex"
+uid="uid://bihilem375ay0"
+path="res://.godot/imported/shells_d.png-fd94faff4e74d847ce62ad0e445b5b22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/UI/Inventory/sprites/placeholder/inventory item 3.png"
-dest_files=["res://.godot/imported/inventory item 3.png-e56d1f41d770a69be71606745f0e8c67.ctex"]
+source_file="res://content/gun stuff/pickup sprites/ammo/shells_d.png"
+dest_files=["res://.godot/imported/shells_d.png-fd94faff4e74d847ce62ad0e445b5b22.ctex"]
 
 [params]
 

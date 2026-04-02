@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://eljk50wcjwo3"]
+[gd_resource type="TileSet" format=3 uid="uid://eljk50wcjwo3"]
 
 [ext_resource type="Texture2D" uid="uid://bv4ftqali5shi" path="res://content/tilesets/snowy chalet/snowy chalet.tres" id="1_sruuv"]
 

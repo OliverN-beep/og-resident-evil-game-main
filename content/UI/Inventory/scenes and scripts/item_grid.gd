@@ -64,7 +64,6 @@ func _gui_input(event: InputEvent) -> void:
 						add_item_to_slot_data(index, held_item)
 						items[0].get_picked_up()
 					return
-				var slot_coords = _get_coords_from_slot_index(index)
 				# Save global position before placing
 				var saved_global = held_item.global_position
 				

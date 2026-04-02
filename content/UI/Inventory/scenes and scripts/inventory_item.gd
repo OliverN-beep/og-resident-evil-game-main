@@ -23,7 +23,7 @@ func _ready() -> void:
 	if data.dimensions == Vector2i.ZERO:
 		push_warning("Item '%s' has no dimensions, defaulting to 1x1" % data.name)
 		data.dimensions = Vector2i(1, 1)
-
+	
 	base_dimensions = data.dimensions
 	texture = data.texture
 	rotation_degrees = 0
@@ -62,19 +62,22 @@ func get_picked_up() -> void:
 
 func get_placed(pos: Vector2i) -> void:
 	is_picked = false
-	rotation_degrees = 90 if is_rotated else 0
-	global_position = pos + Vector2i(size / 2)
+	if is_rotated:
+		rotation_degrees = 90
+	else:
+		rotation_degrees = 0
+	position = pos + Vector2i(size / 2)
 	z_index = 0
 	remove_from_group("held_item")
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
-		# RIGHT CLICK — rotate while dragging (existing behavior)
+		# RIGHT CLICK = rotate while dragging
 		if event.button_index == MOUSE_BUTTON_RIGHT and is_picked:
 			do_rotation()
 			return
 		
-		# LEFT CLICK — select / equip when NOT dragging
+		# LEFT CLICK = select / equip when not dragging
 		if event.button_index == MOUSE_BUTTON_LEFT and not is_picked:
 			_try_select()
 

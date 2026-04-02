@@ -1,32 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx86234kxp1ur"]
+[gd_scene format=3 uid="uid://dx86234kxp1ur"]
 
 [ext_resource type="Script" uid="uid://cb4aufnrp256e" path="res://content/UI/Inventory/scenes and scripts/inventory.gd" id="1_b356l"]
 [ext_resource type="Resource" uid="uid://dhmfenv3waduj" path="res://content/UI/Inventory/resources/inventory_data/player_data.tres" id="2_gulgc"]
 [ext_resource type="Script" uid="uid://0jlsmvn2luwe" path="res://content/UI/Inventory/scenes and scripts/item_grid.gd" id="7_uxy71"]
 [ext_resource type="PackedScene" uid="uid://b3q3blp1fmvsf" path="res://content/UI/Inventory/scenes and scripts/inventory_slot.tscn" id="8_inouc"]
 
-[node name="PlayerInventory" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PlayerInventory" type="PanelContainer" unique_id=2057117566]
 size_flags_horizontal = 4
-
-[node name="Inventory" type="PanelContainer" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_b356l")
 inventory_data = ExtResource("2_gulgc")
 
-[node name="ItemGrid" type="GridContainer" parent="Inventory"]
+[node name="ItemGrid" type="GridContainer" parent="." unique_id=89736054]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 script = ExtResource("7_uxy71")
 inventory_slot_scene = ExtResource("8_inouc")
-grid_dimensions = Vector2i(6, 3)
+grid_dimensions = Vector2i(12, 6)

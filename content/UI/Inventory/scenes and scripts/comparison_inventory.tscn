@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnttff5qgne7j"]
+[gd_scene format=3 uid="uid://cnttff5qgne7j"]
 
 [ext_resource type="PackedScene" uid="uid://dx86234kxp1ur" path="res://content/UI/Inventory/scenes and scripts/player_inventory.tscn" id="1_18eqp"]
 [ext_resource type="PackedScene" uid="uid://1bns34lnihe1" path="res://content/UI/Inventory/scenes and scripts/chest_inventory.tscn" id="2_kjppm"]
 
-[node name="comparison inventory" type="Control"]
+[node name="comparison inventory" type="Control" unique_id=1466176034]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,19 +11,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayerInventory" parent="." instance=ExtResource("1_18eqp")]
+[node name="PlayerInventory" parent="." unique_id=1626334078 instance=ExtResource("1_18eqp")]
 layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = 195.0
 offset_top = 1.0
 offset_right = 195.0
 offset_bottom = 41.0
-grow_horizontal = 1
-grow_vertical = 1
 
-[node name="ChestInventory" parent="." instance=ExtResource("2_kjppm")]
+[node name="ChestInventory" parent="." unique_id=1540874279 instance=ExtResource("2_kjppm")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0

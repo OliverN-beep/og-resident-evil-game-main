@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3dhehiubmit2"
-path="res://.godot/imported/9mm_d.png-682f2d765f036f39c16d9fe15bc32eb0.ctex"
+uid="uid://dinki63vjofcf"
+path="res://.godot/imported/5.56mm_d.png-b8f8e6ac90f2d9b339a075781246d32c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/gun stuff/pickup sprites/9mm_d.png"
-dest_files=["res://.godot/imported/9mm_d.png-682f2d765f036f39c16d9fe15bc32eb0.ctex"]
+source_file="res://content/gun stuff/pickup sprites/ammo/5.56mm_d.png"
+dest_files=["res://.godot/imported/5.56mm_d.png-b8f8e6ac90f2d9b339a075781246d32c.ctex"]
 
 [params]
 

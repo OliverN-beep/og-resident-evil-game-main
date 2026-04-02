@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://drchtc8owoou1"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://drchtc8owoou1"]
 
-[ext_resource type="Resource" uid="uid://cgot8me8pkow" path="res://content/gun stuff/gun resources/burst_smg_resource.tres" id="1_jgssv"]
+[ext_resource type="Resource" uid="uid://cgot8me8pkow" path="res://content/gun stuff/resources/gun resources/burst_smg_resource.tres" id="1_jgssv"]
 [ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_xl2lj"]
 [ext_resource type="Texture2D" uid="uid://dedvn3lk4mpjn" path="res://content/UI/Inventory/sprites/burst_smg_d.png" id="2_3fled"]
 

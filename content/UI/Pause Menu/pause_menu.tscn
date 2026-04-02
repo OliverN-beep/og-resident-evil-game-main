@@ -1,22 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://cclxpyg7phsn4"]
+[gd_scene format=3 uid="uid://cclxpyg7phsn4"]
 
 [ext_resource type="Script" uid="uid://ba0kiugkqb372" path="res://content/UI/Pause Menu/pause_menu.gd" id="1_1m2p7"]
 
-[node name="PauseMenu" type="CanvasLayer"]
+[node name="PauseMenu" type="CanvasLayer" unique_id=2034680663]
 process_mode = 3
 script = ExtResource("1_1m2p7")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 0.60784316)
+[node name="bg" type="ColorRect" parent="." unique_id=1977429028]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.03283694, 0.0040539615, 0.0024320385, 0.4117647)
 
-[node name="Button" type="Button" parent="."]
-offset_left = 60.0
-offset_top = 25.0
-offset_right = 260.0
-offset_bottom = 125.0
-theme_override_font_sizes/font_size = 32
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=912468004]
+offset_right = 920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=19679308]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="resume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1416423336]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Resume"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1578532323]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/resume" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

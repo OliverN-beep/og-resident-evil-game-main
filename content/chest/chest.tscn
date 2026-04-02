@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtanf2ds5mj0n"]
+[gd_scene format=3 uid="uid://dtanf2ds5mj0n"]
 
 [ext_resource type="Script" uid="uid://drk8uacascpwo" path="res://content/chest/chest.gd" id="1_chc5m"]
 [ext_resource type="Texture2D" uid="uid://b4ohab6kft7yr" path="res://content/chest/storage_chest.tres" id="1_tdv3h"]
@@ -48,15 +48,15 @@ _data = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_33un4"]
 
-[node name="Chest" type="Area2D"]
+[node name="Chest" type="Area2D" unique_id=1311599684]
 script = ExtResource("1_chc5m")
 chest_inventory_scene = ExtResource("2_yahd8")
 inventory_data = ExtResource("3_oxqw5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=448374618]
 shape = SubResource("RectangleShape2D_11wu7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=73391616]
 texture_filter = 1
 texture = ExtResource("1_tdv3h")
 hframes = 2
@@ -85,18 +85,16 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "0e4aec65c41255441f1761bb82dd393e"
 
-[node name="InteractLabel" type="Label" parent="."]
+[node name="InteractLabel" type="Label" parent="." unique_id=2088182487]
 offset_left = -6.0
 offset_top = -35.0
 offset_right = 3.0
 offset_bottom = -12.0
 text = "E"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_q18qx"),
-&"open": SubResource("AnimationLibrary_33un4")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=587781207]
+libraries/ = SubResource("AnimationLibrary_q18qx")
+libraries/open = SubResource("AnimationLibrary_33un4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
