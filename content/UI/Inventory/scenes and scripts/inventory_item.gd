@@ -1,15 +1,18 @@
 extends Sprite2D
+class_name InventoryItem
 
-const SLOT_SIZE = 16
+const SLOT_SIZE = 64
 
 @onready var stack_label: Label = $StackLabel
 @onready var buttonmenu: VBoxContainer = $buttonmenu
 
 var data: ItemData
 var is_picked := false
-var is_rotated := false
 var base_dimensions: Vector2i
 var auto_rotated := false
+var holder: Node = null
+
+static var open_menu: InventoryItem = null
 
 var size: Vector2:
 	get():
@@ -18,7 +21,7 @@ var size: Vector2:
 
 var anchor_point: Vector2:
 	get():
-		return global_position - size / 2
+		return global_position - size / 2.0
 
 func _ready() -> void:
 	if data.dimensions == Vector2i.ZERO:
@@ -64,10 +67,11 @@ func get_picked_up() -> void:
 	set_auto_rotated(false)
 
 func get_placed(pos: Vector2i) -> void:
-	if is_rotated:
-		rotation_degrees = 90
+	if data.is_rotated:
+		rotation_degrees = 90.0
 	else:
-		rotation_degrees = 0
+		rotation_degrees = 0.0
+	
 	position = pos + Vector2i(size / 2)
 	z_index = 0
 	remove_from_group("held_item")
@@ -76,16 +80,24 @@ func get_placed(pos: Vector2i) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		# Right click to rotate while dragging
-		if event.button_index == MOUSE_BUTTON_RIGHT and is_picked:
-			do_rotation()
-			return
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			if is_picked:
+				
+				do_rotation()
+				_close_menu()
+				return
 		
-		# Left click to equip when not dragging
-		if event.button_index == MOUSE_BUTTON_RIGHT and !is_picked:
-			buttonmenu.visible = true
+			if open_menu and open_menu != self:
+				open_menu._close_menu()
+			
+			if buttonmenu.visible:
+				_close_menu()
+			else:
+				_open_menu()
 
 func _try_select() -> void:
-	if not data:
+	if !data:
+		print("item_data not found, selection failed")
 		return
 	
 	if data.gun_resource == null:
@@ -99,8 +111,8 @@ func _try_select() -> void:
 	get_tree().call_group("player", "equip_gun", data)
 
 func do_rotation() -> void:
-	is_rotated = !is_rotated
-	rotation_degrees = 90 if is_rotated else 0
+	data.is_rotated = !data.is_rotated
+	update_visual_rotation()
 
 func reparent_to_inventory(inventory_ui: Node) -> void:
 	# inventory_ui should be the GridContainer
@@ -114,12 +126,15 @@ func get_anchor_point() -> Vector2:
 	return anchor_point
 
 func get_dimensions() -> Vector2i:
-	return Vector2i(base_dimensions.y, base_dimensions.x) if is_rotated else base_dimensions
+	return Vector2i(base_dimensions.y, base_dimensions.x) if data.is_rotated else base_dimensions
 
 # Function for updating the rotation of the sprite visually
 # Example use is for rotating items that are too big to fit initially
 func update_visual_rotation() -> void:
-	rotation_degrees = 90 if is_rotated else 0
+	if data.is_rotated:
+		rotation_degrees = 90.0
+	else:
+		rotation_degrees = 0.0
 
 # Function to add a tint to items that have automatically been rotated
 func set_auto_rotated(rotated: bool) -> void:
@@ -129,6 +144,18 @@ func set_auto_rotated(rotated: bool) -> void:
 	else:
 		modulate = Color(1, 1, 1, 1)   # Reset to normal
 
-func _on_equip_pressed() -> void:
+func _on_drop_pressed() -> void:
+	print("DROPPED")
+
+func _on_use_pressed() -> void:
 	_try_select()
-	print("EQUIPPED")
+	print("USED")
+
+func _open_menu():
+	buttonmenu.visible = true
+	open_menu = self
+
+func _close_menu():
+	buttonmenu.visible = false
+	if open_menu == self:
+		open_menu = null

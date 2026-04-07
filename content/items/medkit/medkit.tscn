@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://sq0i1py3tgqo"]
+
+[ext_resource type="Script" uid="uid://b7851il4y4juj" path="res://content/items/medkit/medkit.gd" id="1_7mm1k"]
+[ext_resource type="Resource" uid="uid://bfqdnpupf03j1" path="res://content/UI/Inventory/resources/item_data/medkit.tres" id="2_fe2ol"]
+[ext_resource type="Texture2D" uid="uid://blpoe6m3akea2" path="res://content/items/medkit/medkit_d.png" id="2_pxskd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe2ol"]
+size = Vector2(20, 32)
+
+[node name="Medkit" type="Node2D" unique_id=394137420 groups=["items"]]
+script = ExtResource("1_7mm1k")
+item_data = ExtResource("2_fe2ol")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=1266114159]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=1348192450]
+shape = SubResource("RectangleShape2D_fe2ol")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1013163821]
+texture = ExtResource("2_pxskd")
+region_enabled = true
+region_rect = Rect2(0, 0, 12, 24)
+
+[node name="outline" type="Sprite2D" parent="." unique_id=1408654086]
+texture = ExtResource("2_pxskd")
+region_enabled = true
+region_rect = Rect2(12, 0, 12, 24)

@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 RoomChangeGlobal="*res://content/scripts/RoomChangeGlobal.gd"
 GameplayState="*uid://bbuo1bj33nmbg"
+PlayerGlobal="*uid://g0u5svodqlj4"
 
 [display]
 
@@ -33,6 +34,10 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+
+[global_group]
+
+items=""
 
 [input]
 

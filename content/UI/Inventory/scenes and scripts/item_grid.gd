@@ -1,6 +1,6 @@
 extends GridContainer
 
-const SLOT_SIZE: int = 16
+const SLOT_SIZE: int = 64
 
 @export var inventory_slot_scene: PackedScene
 @export var grid_dimensions: Vector2i
@@ -15,8 +15,6 @@ func _ready() -> void:
 	_init_slot_data()
 	
 	mouse_filter = MOUSE_FILTER_PASS
-	
-	add_to_group("player_inventory_grid")
 
 func _create_slots() -> void:
 	self.columns = grid_dimensions.x
@@ -132,14 +130,14 @@ func _attempt_to_add_item_data(item: Node) -> bool:
 				for x in dims.x:
 					slot_data[slot_index + x + y * columns] = item
 			item.set_init_position(_get_coords_from_slot_index(slot_index))
-			item.is_rotated = false
+			item.data.is_rotated = false
 			item.update_visual_rotation()
 			item.set_auto_rotated(false)
 			return true
 		slot_index += 1
 	
 	# Try rotated orientation
-	item.is_rotated = true
+	item.data.is_rotated = true
 	item.update_visual_rotation()
 	item.set_auto_rotated(true)
 	dims = item.get_dimensions()
@@ -154,9 +152,10 @@ func _attempt_to_add_item_data(item: Node) -> bool:
 		slot_index += 1
 	
 	# Could not fit
-	item.is_rotated = false
+	item.data.is_rotated = false
 	item.update_visual_rotation()
 	item.set_auto_rotated(false)
+	print("COULD NOT FIT ITEM")
 	push_error("Inventory full: Could not add item '%s' (size %dx%d)" %
 		[item.data.name, item.data.dimensions.x, item.data.dimensions.y])
 	return false
@@ -179,9 +178,12 @@ func _get_slot_index_from_coords(global_coords: Vector2) -> int:
 	var local = global_coords - global_position
 	var slot = Vector2i(local / SLOT_SIZE)
 	
-	if slot.x < 0 or slot.y < 0: return -1
-	if slot.x >= grid_dimensions.x: return -1
-	if slot.y >= grid_dimensions.y: return -1
+	if slot.x < 0 or slot.y < 0:
+		return -1
+	if slot.x >= grid_dimensions.x:
+		return -1
+	if slot.y >= grid_dimensions.y:
+		return -1
 	
 	return slot.x + slot.y * columns
 

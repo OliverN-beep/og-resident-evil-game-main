@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bxk8pfcrw42c5" path="res://content/UI/Inventory/scenes and scripts/inventory_item.gd" id="1_c36qv"]
 [ext_resource type="Material" uid="uid://nb2p2g5pfmiq" path="res://content/unlit.tres" id="1_nkiud"]
+[ext_resource type="FontFile" uid="uid://d2prp8khuwo2l" path="res://content/UI/fonts/Cohaerentia/Cohaerentia-Regular.ttf" id="3_uedul"]
 
 [sub_resource type="Theme" id="Theme_jcsqh"]
-default_font_size = 10
+default_font = ExtResource("3_uedul")
+default_font_size = 24
 
 [node name="InventoryItem" type="Sprite2D" unique_id=1619498105]
 material = ExtResource("1_nkiud")
@@ -22,9 +24,9 @@ offset_bottom = 177.0
 theme = SubResource("Theme_jcsqh")
 theme_override_constants/separation = 2
 
-[node name="equip" type="Button" parent="buttonmenu" unique_id=1012119780]
+[node name="use" type="Button" parent="buttonmenu" unique_id=1012119780]
 layout_mode = 2
-text = "Equip"
+text = "Use"
 
 [node name="drop" type="Button" parent="buttonmenu" unique_id=1951336023]
 layout_mode = 2
@@ -34,4 +36,5 @@ text = "Drop"
 layout_mode = 2
 text = "Combine"
 
-[connection signal="pressed" from="buttonmenu/equip" to="." method="_on_equip_pressed"]
+[connection signal="pressed" from="buttonmenu/use" to="." method="_on_use_pressed"]
+[connection signal="pressed" from="buttonmenu/drop" to="." method="_on_drop_pressed"]

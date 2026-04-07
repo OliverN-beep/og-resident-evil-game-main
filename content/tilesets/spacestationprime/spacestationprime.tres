@@ -1,0 +1,6 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://bmxvpp674tpns"]
+
+[ext_resource type="Texture2D" uid="uid://br6bgf51s323h" path="res://content/tilesets/spacestationprime/space_station_prime_d.png" id="1_6iwfy"]
+
+[resource]
+diffuse_texture = ExtResource("1_6iwfy")

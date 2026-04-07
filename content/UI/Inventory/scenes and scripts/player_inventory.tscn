@@ -5,25 +5,30 @@
 [ext_resource type="Script" uid="uid://0jlsmvn2luwe" path="res://content/UI/Inventory/scenes and scripts/item_grid.gd" id="7_uxy71"]
 [ext_resource type="PackedScene" uid="uid://b3q3blp1fmvsf" path="res://content/UI/Inventory/scenes and scripts/inventory_slot.tscn" id="8_inouc"]
 
-[node name="Inventory" type="Control" unique_id=1186083661]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 77.0
-offset_bottom = 101.0
+[node name="Inventory" type="CanvasLayer" unique_id=897454159]
 script = ExtResource("1_b356l")
 inventory_data = ExtResource("2_gulgc")
 
+[node name="bg" type="ColorRect" parent="." unique_id=1174239836]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.15294118, 0.15294118, 0.15294118, 0.5058824)
+
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2057117566]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
 
 [node name="ItemGrid" type="GridContainer" parent="PanelContainer" unique_id=89736054]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 script = ExtResource("7_uxy71")
 inventory_slot_scene = ExtResource("8_inouc")
-grid_dimensions = Vector2i(8, 4)
+grid_dimensions = Vector2i(6, 4)

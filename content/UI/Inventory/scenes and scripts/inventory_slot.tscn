@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://b3q3blp1fmvsf"]
 
 [node name="InventorySlot" type="ColorRect" unique_id=1718030488]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(64, 64)
 offset_right = 16.0
 offset_bottom = 16.0
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.2520276, 0.25202766, 0.25202763, 1)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=730718990]
-custom_minimum_size = Vector2(14, 14)
+custom_minimum_size = Vector2(62, 62)
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0

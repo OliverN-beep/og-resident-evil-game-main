@@ -28,7 +28,10 @@ var gun_instance: Node2D
 @export var player_inventory_scene: PackedScene
 
 # Track the open UI instance so we can close it later
-var inventory_ui_instance: Control = null
+var inventory_ui_instance: CanvasLayer = null
+
+# Base Item reference
+var current_item: BaseItem = null
 
 func _ready() -> void:
 	animation_player.get_animation("Death").loop_mode = Animation.LOOP_NONE
@@ -82,13 +85,12 @@ func _physics_process(delta: float) -> void:
 	velocity = lerp(velocity, input_dir.normalized() * MOVE_SPEED, lerp_weight)
 	move_and_slide()
 
-# Testing for healing and taking damage
 func _unhandled_input(event):
 	# Check the gameplay state first (e.g. if the player is in the inventory)
 	if !GameplayState.can_act():
 		return
 	
-	# Healing and damgage
+	# Healing and damgage testing
 	if event.is_action_pressed("ui_down"):
 		health_component.take_damage(health_component.contact_damage)
 	if event.is_action_pressed("ui_up"):
@@ -97,6 +99,19 @@ func _unhandled_input(event):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
 		toggle_player_inventory()
+	
+	if event.is_action_pressed("interact"):
+		try_pickup()
+
+func try_pickup():
+	if current_item != null:
+		return
+	
+	for item in get_tree().get_nodes_in_group("items"):
+		if item.can_interact:
+			item.pick_up(self)
+			current_item = item
+			break
 
 func apply_knockback(direction: Vector2, force: float, knockback_duration: float) -> void:
 	knockback = direction * force

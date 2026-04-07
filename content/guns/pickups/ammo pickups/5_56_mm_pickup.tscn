@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cc1kp8cqul45u"]
+
+[ext_resource type="Script" uid="uid://s8n3p7fpyof4" path="res://content/guns/pickups/ammo pickups/ammo_pickup.gd" id="1_6v466"]
+[ext_resource type="Texture2D" uid="uid://dinki63vjofcf" path="res://content/guns/pickup sprites/ammo/5.56mm_d.png" id="1_nhtnd"]
+[ext_resource type="Resource" uid="uid://dwpbqbmjmx5x6" path="res://content/guns/resources/ammo resources/5.56mm.tres" id="2_pyn41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6v466"]
+
+[node name="5_56mm_pickup" type="Area2D" unique_id=193495702]
+script = ExtResource("1_6v466")
+ammo_resource = ExtResource("2_pyn41")
+pickup_amount = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=275541688]
+shape = SubResource("RectangleShape2D_6v466")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=933370263]
+texture = ExtResource("1_nhtnd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

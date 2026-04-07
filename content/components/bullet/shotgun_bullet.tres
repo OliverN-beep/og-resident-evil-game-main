@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="BulletComponent" load_steps=4 format=3 uid="uid://d0fb2wwovs8ov"]
+[gd_resource type="Resource" script_class="BulletComponent" format=3 uid="uid://d0fb2wwovs8ov"]
 
 [ext_resource type="Texture2D" uid="uid://cgn7cy3c1j163" path="res://content/bullets/projectile_1.tres" id="1_d00xa"]
-[ext_resource type="Script" uid="uid://mbxb1alct6gm" path="res://content/gun stuff/resource scripts/bullet_component.gd" id="1_ykvq7"]
+[ext_resource type="Script" uid="uid://mbxb1alct6gm" path="res://content/guns/resource scripts/bullet_component.gd" id="1_ykvq7"]
 [ext_resource type="Texture2D" uid="uid://c6g6mfudtp37m" path="res://content/bullets/projectile_2.tres" id="2_4erxu"]
 
 [resource]

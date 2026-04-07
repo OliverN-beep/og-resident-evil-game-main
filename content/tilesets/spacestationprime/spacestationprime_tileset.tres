@@ -1,0 +1,22 @@
+[gd_resource type="TileSet" format=3 uid="uid://bj14vx3lf32yo"]
+
+[ext_resource type="Texture2D" uid="uid://bmxvpp674tpns" path="res://content/tilesets/spacestationprime/spacestationprime.tres" id="1_6snov"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27gyj"]
+texture = ExtResource("1_6snov")
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+6:2/0 = 0
+6:1/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+4:2/0 = 0
+4:1/0 = 0
+4:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_27gyj")

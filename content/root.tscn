@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b0tug1d4vbg01"]
+
+[ext_resource type="PackedScene" uid="uid://c2s4ny8o5mfwq" path="res://content/entities/player/player.tscn" id="1_870w3"]
+[ext_resource type="Script" uid="uid://bcmewpx6jj1us" path="res://content/root.gd" id="1_l0ysy"]
+[ext_resource type="PackedScene" uid="uid://cy6b1lvqky2kp" path="res://content/entities/test_enemy/test_enemy.tscn" id="2_ikevl"]
+[ext_resource type="Script" uid="uid://cfhly1r2jgtoj" path="res://content/scripts/player_camera.gd" id="2_ym51k"]
+[ext_resource type="PackedScene" uid="uid://cclxpyg7phsn4" path="res://content/UI/Pause Menu/pause_menu.tscn" id="3_dj6qu"]
+[ext_resource type="PackedScene" uid="uid://v82etf4nwkf4" path="res://content/levels/playablemap_1.tscn" id="6_h05mm"]
+[ext_resource type="Shader" uid="uid://qbdj5m885et7" path="res://content/shaders/screen_effect.gdshader" id="8_gmax0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_13l5x"]
+shader = ExtResource("8_gmax0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_oorap"]
+size = Vector2(1920, 1080)
+center_offset = Vector3(960, 540, 0)
+
+[node name="root" type="Node2D" unique_id=1511020228]
+script = ExtResource("1_l0ysy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2049426886]
+zoom = Vector2(4, 4)
+script = ExtResource("2_ym51k")
+
+[node name="Player" parent="." unique_id=377094539 instance=ExtResource("1_870w3")]
+position = Vector2(-22, -19)
+
+[node name="test_enemy" parent="." unique_id=873717417 instance=ExtResource("2_ikevl")]
+position = Vector2(-132, -46)
+
+[node name="PauseMenu" parent="." unique_id=2044829845 instance=ExtResource("3_dj6qu")]
+
+[node name="CRT Canvas" type="CanvasLayer" parent="." unique_id=218196012]
+visible = false
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CRT Canvas" unique_id=542474959]
+material = SubResource("ShaderMaterial_13l5x")
+mesh = SubResource("QuadMesh_oorap")
+
+[node name="darkness tint" type="CanvasModulate" parent="." unique_id=838675043]
+visible = false
+color = Color(0.34781694, 0.34781697, 0.3478169, 1)
+
+[node name="RoomHolder" type="Node2D" parent="." unique_id=1089082552]
+
+[node name="playablemap1" parent="RoomHolder" unique_id=291388285 instance=ExtResource("6_h05mm")]
