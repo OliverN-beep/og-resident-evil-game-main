@@ -14,5 +14,8 @@ class_name ItemData
 @export var ammo_amount: int = 0
 @export var loaded_ammo: int = -1
 
+# Shop data
+@export var shop_price: int
+
 var grid_index: int = -1
 var is_rotated: bool = false

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dc3053x4j8qrb"
+path="res://.godot/imported/shopkeeper.aseprite-d821f46bcdda257bb860937e317bbeb4.res"
+
+[deps]
+
+source_file="res://content/entities/shopkeeper/shopkeeper.aseprite"
+dest_files=["res://.godot/imported/shopkeeper.aseprite-d821f46bcdda257bb860937e317bbeb4.res"]
+
+[params]
+

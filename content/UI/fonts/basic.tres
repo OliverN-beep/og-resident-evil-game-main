@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://eitr61cmcfxx"]
+
+[ext_resource type="FontFile" uid="uid://d2prp8khuwo2l" path="res://content/UI/fonts/Cohaerentia/Cohaerentia-Regular.ttf" id="1_br8k5"]
+
+[resource]
+default_font = ExtResource("1_br8k5")
+default_font_size = 60

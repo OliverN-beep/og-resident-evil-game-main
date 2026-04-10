@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://b868k8ycsqv6t"]
+
+[ext_resource type="Texture2D" uid="uid://rtltnligkcbk" path="res://content/entities/shopkeeper/shopkeeper_d.png" id="1_c2oom"]
+[ext_resource type="Script" uid="uid://i5kwh7ql0w44" path="res://content/entities/shopkeeper/shopkeeper.gd" id="1_nb2rr"]
+[ext_resource type="Theme" uid="uid://eitr61cmcfxx" path="res://content/UI/fonts/basic.tres" id="3_3li1n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb2rr"]
+size = Vector2(51, 33)
+
+[sub_resource type="Animation" id="Animation_c2oom"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nb2rr"]
+_data = {
+&"default": SubResource("Animation_c2oom")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2oom"]
+size = Vector2(74, 42)
+
+[node name="Shopkeeper" type="CharacterBody2D" unique_id=454657011]
+script = ExtResource("1_nb2rr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=249157394]
+texture_filter = 1
+texture = ExtResource("1_c2oom")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://content/entities/shopkeeper/shopkeeper.aseprite",
+"source_uid": 7359015321620626171
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3c2d6b7682ed7e6dae58d5591fc79b0b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1363958673]
+shape = SubResource("RectangleShape2D_nb2rr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=58077892]
+libraries/ = SubResource("AnimationLibrary_nb2rr")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=569634319]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1676456727]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_c2oom")
+debug_color = Color(0.7227514, 0.47853243, 3.85046e-07, 0.41960785)
+
+[node name="ShopUI" type="CanvasLayer" parent="." unique_id=1196159944]
+
+[node name="bg" type="ColorRect" parent="ShopUI" unique_id=166536253]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6392157)
+
+[node name="MarginContainer" type="MarginContainer" parent="ShopUI" unique_id=1412595217]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -415.0
+offset_top = -325.0
+offset_right = 415.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopUI/MarginContainer" unique_id=2059582554]
+layout_mode = 2
+theme = ExtResource("3_3li1n")
+theme_override_constants/separation = 64
+
+[node name="buy" type="Button" parent="ShopUI/MarginContainer/HBoxContainer" unique_id=945872753]
+layout_mode = 2
+text = "BUY"
+
+[node name="sell" type="Button" parent="ShopUI/MarginContainer/HBoxContainer" unique_id=236529497]
+layout_mode = 2
+text = "SELL"
+
+[node name="fight" type="Button" parent="ShopUI/MarginContainer/HBoxContainer" unique_id=1040665785]
+layout_mode = 2
+text = "FIGHT"
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

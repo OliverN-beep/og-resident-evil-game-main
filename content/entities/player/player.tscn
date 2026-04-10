@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cs0gqas2ioi50" path="res://content/entities/player/player2 (LIGHT).tres" id="3_t4ell"]
 [ext_resource type="PackedScene" uid="uid://ibed6d3m8j7e" path="res://content/UI/health/hearts_ui.tscn" id="5_55yfw"]
 [ext_resource type="PackedScene" uid="uid://dx86234kxp1ur" path="res://content/UI/Inventory/scenes and scripts/player_inventory.tscn" id="5_r5tfu"]
+[ext_resource type="Texture2D" uid="uid://33f6nlg3dro6" path="res://content/UI/borders/border1_d.png" id="6_i83cd"]
 [ext_resource type="PackedScene" uid="uid://cclxpyg7phsn4" path="res://content/UI/Pause Menu/pause_menu.tscn" id="7_1umn6"]
 [ext_resource type="Shader" uid="uid://qbdj5m885et7" path="res://content/shaders/screen_effect.gdshader" id="8_i83cd"]
 
@@ -192,19 +193,20 @@ libraries/ = SubResource("AnimationLibrary_piw5s")
 
 [node name="Overlay" type="CanvasLayer" parent="." unique_id=581603881]
 
-[node name="ColorRect" type="ColorRect" parent="Overlay" unique_id=2029405186]
+[node name="borderL" type="TextureRect" parent="Overlay" unique_id=780133591]
 offset_right = 240.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+texture = ExtResource("6_i83cd")
 
-[node name="ColorRect2" type="ColorRect" parent="Overlay" unique_id=79006386]
+[node name="borderR" type="TextureRect" parent="Overlay" unique_id=1673260958]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -240.0
 offset_bottom = 1080.0
 grow_horizontal = 0
-color = Color(0, 0, 0, 1)
+texture = ExtResource("6_i83cd")
+flip_h = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1895918916]
 scale = Vector2(4, 4)

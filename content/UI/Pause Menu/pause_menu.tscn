@@ -12,29 +12,35 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.03283694, 0.0040539615, 0.0024320385, 0.4117647)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=912468004]
-offset_right = 920.0
-offset_bottom = 1080.0
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=871428546]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=912468004]
+layout_mode = 2
 theme_override_constants/margin_left = 128
 theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 128
 theme_override_constants/margin_bottom = 128
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=19679308]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer" unique_id=19679308]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="resume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1416423336]
+[node name="resume" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1416423336]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_0ejqv")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 80
 text = "Resume"
 
-[node name="quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1578532323]
+[node name="quit" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1578532323]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_0ejqv")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/resume" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/resume" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

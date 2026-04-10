@@ -8,10 +8,7 @@ var player_ref: Player
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
-		var new_items: Array[ItemData] = player_ref.inventory_data.add_ammo(
-			ammo_resource,
-			pickup_amount
-		)
+		var new_items: Array[ItemData] = player_ref.inventory_data.add_ammo(ammo_resource, pickup_amount)
 		
 		for ui in get_tree().get_nodes_in_group("inventory_ui"):
 			if ui.inventory_data == player_ref.inventory_data:
