@@ -8,7 +8,7 @@ class_name Player
 @onready var ui_layer: CanvasLayer = $CanvasLayer
 
 # Declare constants
-const MOVE_SPEED: int = 60
+const MOVE_SPEED: int = 100
 const ACCELERATION: int = 5
 const FRICTION: int = 8
 

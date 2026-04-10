@@ -38,3 +38,4 @@ text = "Combine"
 
 [connection signal="pressed" from="buttonmenu/use" to="." method="_on_use_pressed"]
 [connection signal="pressed" from="buttonmenu/drop" to="." method="_on_drop_pressed"]
+[connection signal="pressed" from="buttonmenu/combine" to="." method="_on_combine_pressed"]

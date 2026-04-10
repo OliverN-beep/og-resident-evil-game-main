@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Top-Down 2D Resident Evil Classic"
-run/main_scene="uid://b0tug1d4vbg01"
+run/main_scene="uid://b6g68u6eegdw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

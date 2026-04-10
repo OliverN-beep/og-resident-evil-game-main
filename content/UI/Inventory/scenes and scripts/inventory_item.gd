@@ -106,6 +106,7 @@ func _try_select() -> void:
 	# Only equip if parented to the player's inventory grid
 	var player_inventory := get_tree().get_first_node_in_group("player_inventory_grid")
 	if get_parent() != player_inventory:
+		print("GRID DOES NOT HAVE player_inventory_grid GROUP ASSIGNED!!")
 		return
 	
 	get_tree().call_group("player", "equip_gun", data)
@@ -150,6 +151,9 @@ func _on_drop_pressed() -> void:
 func _on_use_pressed() -> void:
 	_try_select()
 	print("USED")
+
+func _on_combine_pressed() -> void:
+	print("COMBINE")
 
 func _open_menu():
 	buttonmenu.visible = true

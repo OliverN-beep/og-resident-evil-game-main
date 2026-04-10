@@ -18,13 +18,23 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.15294118, 0.15294118, 0.15294118, 0.5058824)
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2057117566]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1583228060]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
+offset_left = -198.0
+offset_right = 202.0
+offset_bottom = 400.0
 grow_horizontal = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
 
-[node name="ItemGrid" type="GridContainer" parent="PanelContainer" unique_id=89736054]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=2057117566]
+layout_mode = 2
+
+[node name="ItemGrid" type="GridContainer" parent="MarginContainer/PanelContainer" unique_id=89736054 groups=["player_inventory_grid"]]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 0
