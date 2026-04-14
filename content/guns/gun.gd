@@ -3,17 +3,12 @@ extends Node2D
 const bullet_scene = preload("res://content/bullets/bullet.tscn")
 
 @onready var rotation_offset: Node2D = $RotationOffset
-@onready var torchlight: PointLight2D = $RotationOffset/torchlight
 @onready var shoot_timer: Timer = $ShootTimer
 
 signal ammo_changed(current: int)
 
 # Booleans
 var can_shoot := true
-var torchlight_on := false
-
-# Recoil
-var recoil := 0.0
 
 # Resources
 var gun_resource: GunResource
@@ -26,16 +21,12 @@ var is_reloading := false
 
 var gun_item_data: ItemData
 
-func _ready() -> void:
-	torchlight.visible = false
-
 func set_gun_resource(res: GunResource, item_data: ItemData) -> void:
 	gun_resource = res
 	gun_item_data = item_data
 	
 	bullet_component = res.bullet_component.duplicate() as BulletComponent
 	shoot_timer.wait_time = bullet_component.fire_rate
-	recoil = 0.0
 	is_reloading = false
 	
 	if gun_item_data.loaded_ammo >= 0:
@@ -53,13 +44,9 @@ func _physics_process(delta: float) -> void:
 	if !GameplayState.can_act():
 		return
 	
-	# Recoil decay
-	recoil = max(recoil - bullet_component.recoil_decay_rate * delta, 0.0)
+	rotation_offset.rotation = lerp_angle(rotation_offset.rotation, (get_global_mouse_position() - global_position).angle(), 6.5 * delta)
 	
-	rotation_offset.rotation = lerp_angle(
-		rotation_offset.rotation, (get_global_mouse_position() - global_position).angle(), 6.5 * delta)
-	
-	var wants_to_fire := false
+	var wants_to_fire: bool = false
 	
 	match bullet_component.fire_mode:
 		BulletComponent.FireMode.SEMI:
@@ -75,10 +62,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("reload"):
 		_try_reload()
 		print ("reload pressed")
-	
-	if Input.is_action_just_pressed("torchlight"):
-		torchlight_on = !torchlight_on
-		torchlight.visible = torchlight_on
 
 func _shoot():
 	var base_dir := Vector2.RIGHT.rotated(rotation_offset.global_rotation)
@@ -122,11 +105,10 @@ func _fire_weapon():
 	current_ammo -= 1
 	ammo_changed.emit(current_ammo)
 	
-	match bullet_component.fire_mode:
-		BulletComponent.FireMode.BURST:
-			_fire_burst()
-		_:
-			_shoot_once()
+	if bullet_component.fire_mode == BulletComponent.FireMode.BURST:
+		_fire_burst()
+	else:
+		_shoot_once()
 	
 	shoot_timer.start()
 	
@@ -147,10 +129,7 @@ func _shoot_once():
 	
 	var base_dir := Vector2.RIGHT.rotated(rotation_offset.global_rotation)
 	
-	var spread := deg_to_rad(
-		bullet_component.base_spread_deg +
-		recoil * bullet_component.recoil_spread_deg
-	)
+	var spread := deg_to_rad(bullet_component.base_spread_deg * bullet_component.recoil_spread_deg)
 	
 	var pellets: int = max(1, bullet_component.pellet_count)
 	
@@ -171,9 +150,6 @@ func _shoot_once():
 		bullet.global_position = global_position + dir * bullet_component.spawn_offset
 		bullet.global_rotation = dir.angle()
 		bullet.apply_bullet_component(bullet_component, dir)
-	
-	# Recoil increases per shot
-	recoil += 1.0
 
 func _try_reload():
 	if is_reloading:
@@ -190,10 +166,7 @@ func _try_reload():
 	
 	_reload()
 	
-	print("Reload pressed. Has ammo:",
-		inventory_data.has_ammo(gun_resource.ammo_type),
-		"Current:", current_ammo
-	)
+	print("Reload pressed. Has ammo:", inventory_data.has_ammo(gun_resource.ammo_type), "Current:", current_ammo)
 
 func _reload():
 	is_reloading = true
@@ -204,10 +177,7 @@ func _reload():
 		is_reloading = false
 		return
 	
-	var taken: int = inventory_data.take_ammo(
-		gun_resource.ammo_type,
-		needed
-	)
+	var taken: int = inventory_data.take_ammo(gun_resource.ammo_type, needed)
 	
 	if taken <= 0:
 		is_reloading = false

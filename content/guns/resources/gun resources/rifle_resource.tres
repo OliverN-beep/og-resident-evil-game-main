@@ -2,13 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dm8x4slcstgn0" path="res://content/guns/gun.tscn" id="1_b5ttp"]
 [ext_resource type="Resource" uid="uid://cfndti8ly6mf7" path="res://content/components/bullet/rifle_bullet.tres" id="1_wtast"]
-[ext_resource type="Texture2D" uid="uid://4akdm2dyv48q" path="res://content/UI/Inventory/sprites/rifle_d.png" id="2_wtast"]
 [ext_resource type="Script" uid="uid://clkhwh0wmh042" path="res://content/guns/resource scripts/gun_resource.gd" id="4_tbsba"]
 
 [resource]
 script = ExtResource("4_tbsba")
 display_name = "Rifle"
-icon = ExtResource("2_wtast")
 gun_scene = ExtResource("1_b5ttp")
 ammo_type = "50cal"
 magazine_size = 1

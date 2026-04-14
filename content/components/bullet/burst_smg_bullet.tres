@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("2_0ga3g")
 fire_mode = 2
+spawn_offset = 8.0
 bullet_type_array = Array[Texture2D]([ExtResource("1_0ga3g")])
 metadata/_custom_type_script = "uid://mbxb1alct6gm"

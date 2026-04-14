@@ -3,9 +3,9 @@ class_name Bullet
 
 @onready var sprite: Sprite2D = $Sprite2D
 
-var velocity := Vector2.ZERO
-var damage := 0
-var lifetime := 0.0
+var velocity: Vector2 = Vector2.ZERO
+var damage: int = 1
+var lifetime: float = 0.0
 
 func _ready() -> void:
 	set_physics_process(false) # disabled until configured
@@ -30,5 +30,6 @@ func apply_bullet_component(bc: BulletComponent, dir: Vector2) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("damageable"):
+		body.take_damage(damage)
 		print("Take damage")
 		queue_free()

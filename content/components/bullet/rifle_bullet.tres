@@ -8,6 +8,7 @@
 script = ExtResource("3_8midl")
 bullet_speed = 400.0
 fire_rate = 0.1
+spawn_offset = 8.0
 burst_count = 0
 bullet_type = 1
 bullet_type_array = Array[Texture2D]([ExtResource("1_8midl"), ExtResource("2_18cyk")])

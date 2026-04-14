@@ -4,8 +4,9 @@ class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_sprite: Sprite2D = $Sprite2D
 @onready var hearts_ui: Control = $CanvasLayer/HeartsUI
-@onready var health_component: HEALTH_COMPONENT = $Components/HEALTH_COMPONENT
+@onready var health_component: HEALTH_COMPONENT = $HEALTH_COMPONENT
 @onready var ui_layer: CanvasLayer = $CanvasLayer
+@onready var death_screen: CanvasLayer = $death_screen
 
 # Declare constants
 const MOVE_SPEED: int = 100
@@ -15,7 +16,6 @@ const FRICTION: int = 8
 # Declare variables
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
-var inventory_open: bool = false
 
 # Inventory
 var equipped_gun_item: ItemData
@@ -34,20 +34,22 @@ var inventory_ui_instance: CanvasLayer = null
 var current_item: BaseItem = null
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
 	animation_player.get_animation("Death").loop_mode = Animation.LOOP_NONE
 	
 	# Make sure UI starts at the right value
 	hearts_ui.max_health = health_component.max_health
 	hearts_ui.set_health(health_component.current_health)
 	
-	# Connect health component signal
+	# Connect health component signals
 	health_component.health_changed.connect(hearts_ui.set_health)
+	health_component.died.connect(_died)
 	
 	if RoomChangeGlobal.Activate:
 		global_position = RoomChangeGlobal.player_pos
 		RoomChangeGlobal.Activate = false
 
-# Physics processes
 func _physics_process(delta: float) -> void:
 	if !GameplayState.can_act():
 		velocity = Vector2.ZERO
@@ -60,19 +62,11 @@ func _physics_process(delta: float) -> void:
 	input_dir.y = Input.get_axis("up", "down")
 	
 	# Animations based on walk direction
-	if input_dir.x:
-		animation_player.play("Walk", 0.0, 1.0)
+	if input_dir:
+		animation_player.play("Walk", -1, 1.0)
 		player_sprite.flip_h = input_dir.x < 0
-	elif input_dir.y < 0:
-		animation_player.play("Walk up", 0.0, 1.0)
-	elif input_dir.y > 0:
-		animation_player.play("Walk down", 0.0, 1.0)
 	else:
-		animation_player.play("Idle", 0.0, 1.0)
-	
-	# Health Component animations
-	if health_component.current_health == 0:
-		animation_player.play("Death", 0.0, 1.0)
+		animation_player.play("Idle", -1, 1.0)
 	
 	# Handle knockback
 	if knockback_timer > 0.0:
@@ -154,7 +148,9 @@ func toggle_player_inventory():
 		
 		# Resume movement/gameplay
 		GameplayState.inventory_open = false 
-		inventory_open = false
+		
+		# Hide cursor
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	else:
 		if not GameplayState.can_act():
@@ -169,7 +165,6 @@ func toggle_player_inventory():
 		
 		# Pause movement/gameplay
 		GameplayState.inventory_open = true
-		inventory_open = true
 
 func _on_gun_ammo_changed(new_amount: int) -> void:
 	if equipped_gun_item:
@@ -179,5 +174,11 @@ func _on_gun_ammo_changed(new_amount: int) -> void:
 	for ui in get_tree().get_nodes_in_group("inventory_ui"):
 		ui.rebuild()
 
-func _on_spawn(spawn_position: Vector2, _direction: String):
-	global_position = spawn_position
+func take_damage(amount: int):
+	health_component.take_damage(amount)
+
+func _died():
+	print("player died")
+	animation_player.play("Death", -1, 1.0)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	death_screen.visible = true

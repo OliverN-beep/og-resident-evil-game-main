@@ -7,6 +7,8 @@ extends CanvasLayer
 var inventory_item_scene: PackedScene = preload("res://content/UI/Inventory/scenes and scripts/inventory_item.tscn")
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	for item_data in inventory_data.items:
 		_add_item(item_data)
 

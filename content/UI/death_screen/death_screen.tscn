@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dc0ot77y3sa57"]
+
+[ext_resource type="Shader" uid="uid://qbdj5m885et7" path="res://content/shaders/screen_effect.gdshader" id="1_4qt38"]
+[ext_resource type="Script" uid="uid://c0crixti5qk8c" path="res://content/UI/death_screen/death_screen.gd" id="1_dg0lk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dg0lk"]
+shader = ExtResource("1_4qt38")
+
+[node name="death_screen" type="CanvasLayer" unique_id=1287883573]
+script = ExtResource("1_dg0lk")
+
+[node name="bg" type="ColorRect" parent="." unique_id=1032312655]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.20152658, 0.20152658, 0.20152658, 1)
+
+[node name="crt" type="ColorRect" parent="." unique_id=1310043242]
+material = SubResource("ShaderMaterial_dg0lk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=490838443]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -340.5
+offset_right = 340.5
+offset_bottom = 433.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="title" type="Label" parent="MarginContainer" unique_id=449927193]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8470958, 0, 0.112853475, 1)
+theme_override_font_sizes/font_size = 200
+text = "DEATH"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=111226839]
+offset_top = 580.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer" unique_id=1800389304]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="retry" type="Button" parent="CenterContainer/HBoxContainer" unique_id=1925611101]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "RETRY"
+
+[node name="exit" type="Button" parent="CenterContainer/HBoxContainer" unique_id=1398000932]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "EXIT"
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/exit" to="." method="_on_exit_pressed"]

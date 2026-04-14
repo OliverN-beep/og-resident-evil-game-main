@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://clpyft57tf83h" path="res://content/UI/main menu/main_menu.gd" id="1_g2eui"]
 [ext_resource type="FontFile" uid="uid://d2prp8khuwo2l" path="res://content/UI/fonts/Cohaerentia/Cohaerentia-Regular.ttf" id="1_hx5oi"]
+[ext_resource type="Shader" uid="uid://qbdj5m885et7" path="res://content/shaders/screen_effect.gdshader" id="2_mw5ci"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mw5ci"]
+shader = ExtResource("2_mw5ci")
 
 [node name="MainMenu" type="CanvasLayer" unique_id=592957953]
 script = ExtResource("1_g2eui")
@@ -13,6 +17,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.29140857, 0.1984744, 0.15698603, 1)
+
+[node name="crt" type="ColorRect" parent="." unique_id=1517022673]
+material = SubResource("ShaderMaterial_mw5ci")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1902466897]
 anchors_preset = 5

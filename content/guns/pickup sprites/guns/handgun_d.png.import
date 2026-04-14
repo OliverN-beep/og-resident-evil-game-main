@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2aj64rlu20jq"
-path="res://.godot/imported/targeting enemy 1_d.png-f50b93b209dbcd1f1aa794328d45b6db.ctex"
+uid="uid://pplta5pfaefh"
+path="res://.godot/imported/handgun_d.png-7648a27b2da16f079a6460dd1f781b4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://content/entities/targeting enemy/targeting enemy 1_d.png"
-dest_files=["res://.godot/imported/targeting enemy 1_d.png-f50b93b209dbcd1f1aa794328d45b6db.ctex"]
+source_file="res://content/guns/pickup sprites/guns/handgun_d.png"
+dest_files=["res://.godot/imported/handgun_d.png-7648a27b2da16f079a6460dd1f781b4d.ctex"]
 
 [params]
 

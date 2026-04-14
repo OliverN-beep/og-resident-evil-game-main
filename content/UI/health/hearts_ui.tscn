@@ -1,28 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://ibed6d3m8j7e"]
+[gd_scene format=3 uid="uid://ibed6d3m8j7e"]
 
 [ext_resource type="Script" uid="uid://bdonps62sfx0m" path="res://content/UI/health/hearts_ui.gd" id="1_0rtwh"]
 [ext_resource type="Texture2D" uid="uid://whhdlf48pu4j" path="res://content/UI/health/heart.png" id="2_m8kwr"]
 [ext_resource type="Texture2D" uid="uid://u6sjc1kft1mi" path="res://content/UI/health/empty heart.png" id="3_gx226"]
 
-[node name="HeartsUI" type="Control"]
+[node name="HeartsUI" type="Control" unique_id=1520138179]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.8)
 script = ExtResource("1_0rtwh")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=273860735]
 layout_mode = 0
 offset_right = 36.0
 offset_bottom = 16.0
+theme_override_constants/separation = -8
 
-[node name="Heart Full" type="TextureRect" parent="HBoxContainer"]
+[node name="Heart Full" type="TextureRect" parent="HBoxContainer" unique_id=503937485]
 layout_mode = 2
 texture = ExtResource("2_m8kwr")
 
-[node name="Heart Empty" type="TextureRect" parent="HBoxContainer"]
+[node name="Heart Empty" type="TextureRect" parent="HBoxContainer" unique_id=546333970]
 layout_mode = 2
 texture = ExtResource("3_gx226")

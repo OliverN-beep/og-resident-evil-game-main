@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://0jlsmvn2luwe" path="res://content/UI/Inventory/scenes and scripts/item_grid.gd" id="7_uxy71"]
 [ext_resource type="PackedScene" uid="uid://b3q3blp1fmvsf" path="res://content/UI/Inventory/scenes and scripts/inventory_slot.tscn" id="8_inouc"]
 
-[node name="Inventory" type="CanvasLayer" unique_id=897454159]
+[node name="Inventory" type="CanvasLayer" unique_id=897454159 groups=["inventory_ui"]]
 script = ExtResource("1_b356l")
 inventory_data = ExtResource("2_gulgc")
 
@@ -22,8 +22,8 @@ color = Color(0.15294118, 0.15294118, 0.15294118, 0.5058824)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -198.0
-offset_right = 202.0
+offset_left = -200.0
+offset_right = 200.0
 offset_bottom = 400.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 200
@@ -41,4 +41,4 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 script = ExtResource("7_uxy71")
 inventory_slot_scene = ExtResource("8_inouc")
-grid_dimensions = Vector2i(6, 4)
+grid_dimensions = Vector2i(5, 4)

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://33f6nlg3dro6" path="res://content/UI/borders/border1_d.png" id="6_i83cd"]
 [ext_resource type="PackedScene" uid="uid://cclxpyg7phsn4" path="res://content/UI/Pause Menu/pause_menu.tscn" id="7_1umn6"]
 [ext_resource type="Shader" uid="uid://qbdj5m885et7" path="res://content/shaders/screen_effect.gdshader" id="8_i83cd"]
+[ext_resource type="PackedScene" uid="uid://dc0ot77y3sa57" path="res://content/UI/death_screen/death_screen.tscn" id="10_iakl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1ecw"]
 size = Vector2(5, 5)
@@ -149,13 +150,6 @@ script = ExtResource("1_cp3qr")
 inventory_data = ExtResource("2_r5tfu")
 player_inventory_scene = ExtResource("5_r5tfu")
 
-[node name="Components" type="Node" parent="." unique_id=24048352]
-
-[node name="HEALTH_COMPONENT" type="Node" parent="Components" unique_id=2054341854]
-script = ExtResource("2_55yfw")
-max_health = 6
-metadata/_custom_type_script = "uid://dw5oefh5egyfm"
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1560330261]
 texture_filter = 1
 texture = ExtResource("3_t4ell")
@@ -182,14 +176,18 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://content/entities/player/player2 (LIGHT).aseprite",
 "source_uid": 9192656548297357125
 }
-metadata/_aseprite_wizard_source_file_hash_ = "4679c5dc368ac17d187ec49b5b2ad7b0"
+metadata/_aseprite_wizard_source_file_hash_ = "a34a8a9f9843d37f3baff54a0b138d51"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1387952141]
-position = Vector2(2, 5)
 shape = SubResource("RectangleShape2D_u1ecw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1871789462]
 libraries/ = SubResource("AnimationLibrary_piw5s")
+
+[node name="HEALTH_COMPONENT" type="Node" parent="." unique_id=2054341854]
+script = ExtResource("2_55yfw")
+max_health = 2
+metadata/_custom_type_script = "uid://dw5oefh5egyfm"
 
 [node name="Overlay" type="CanvasLayer" parent="." unique_id=581603881]
 
@@ -213,17 +211,15 @@ scale = Vector2(4, 4)
 transform = Transform2D(4, 0, 0, 4, 0, 0)
 
 [node name="HeartsUI" parent="CanvasLayer" unique_id=1020109654 instance=ExtResource("5_55yfw")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 105.00001
+offset_right = 105.0
 
 [node name="PauseMenu" parent="." unique_id=2034680663 instance=ExtResource("7_1umn6")]
 
 [node name="CRT Canvas" type="CanvasLayer" parent="." unique_id=1441296696]
-visible = false
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CRT Canvas" unique_id=388220788]
 material = SubResource("ShaderMaterial_iakl4")
 mesh = SubResource("QuadMesh_g15rv")
+
+[node name="death_screen" parent="." unique_id=1287883573 instance=ExtResource("10_iakl4")]

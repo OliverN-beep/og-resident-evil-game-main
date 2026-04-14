@@ -1,29 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy6b1lvqky2kp"]
+[gd_scene format=4 uid="uid://cy6b1lvqky2kp"]
 
 [ext_resource type="Script" uid="uid://bgd32bar3coxv" path="res://content/entities/test_enemy/test_enemy.gd" id="1_b3jmt"]
 [ext_resource type="Script" uid="uid://dw5oefh5egyfm" path="res://content/components/health/health_component.gd" id="2_jtgcf"]
-[ext_resource type="Material" uid="uid://c7m5w5bjhedka" path="res://content/hide_in_shadow.tres" id="2_vd45q"]
 [ext_resource type="PackedScene" uid="uid://ibed6d3m8j7e" path="res://content/UI/health/hearts_ui.tscn" id="4_krdyo"]
-[ext_resource type="Texture2D" uid="uid://bjt553ja0jsng" path="res://content/entities/test_enemy/enemy.png" id="5_ot2xv"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_jtgcf"]
+_data = PackedByteArray("AAADAAUAAAABAAAAYAAAADAAAABCAAAAUklGRjoAAABXRUJQVlA4TC4AAAAvX8ALEBcwUQKBFKewy2LBZP5HCLHOf8C7gUiAxJOc5KddW0T/JyAXBGiqe9s+")
+size_override = Vector2(96, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3smdo"]
 size = Vector2(12, 12)
-
-[sub_resource type="Animation" id="Animation_jtgcf"]
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 2, 1, 2, 1, 2]
-}
 
 [sub_resource type="Animation" id="Animation_vd45q"]
 length = 0.2
@@ -54,12 +40,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [3, 3]
+"values": [1, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ot2xv"]
 _data = {
-&"Death": SubResource("Animation_jtgcf"),
 &"Idle": SubResource("Animation_vd45q"),
 &"Walk": SubResource("Animation_krdyo")
 }
@@ -73,28 +58,20 @@ radius = 50.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_b3jmt"]
 radius = 70.0
 
-[node name="test_enemy" type="CharacterBody2D" groups=["damageable"]]
+[node name="test_enemy" type="CharacterBody2D" unique_id=1702268779 groups=["damageable"]]
 script = ExtResource("1_b3jmt")
 
-[node name="HeartsUI" parent="." instance=ExtResource("4_krdyo")]
-offset_left = -16.999998
-offset_top = -21.999998
-offset_right = -16.999998
-offset_bottom = -21.999998
+[node name="HeartsUI" parent="." unique_id=711325918 instance=ExtResource("4_krdyo")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
-[node name="Components" type="Node" parent="."]
-
-[node name="HEALTH_COMPONENT" type="Node" parent="Components"]
-script = ExtResource("2_jtgcf")
-max_health = 5
-metadata/_custom_type_script = "uid://dw5oefh5egyfm"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=655075483]
 texture_filter = 1
-material = ExtResource("2_vd45q")
-texture = ExtResource("5_ot2xv")
+texture = SubResource("PortableCompressedTexture2D_jtgcf")
 hframes = 2
-vframes = 2
 frame = 1
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
@@ -117,31 +94,33 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://content/entities/test_enemy/enemy.aseprite",
 "source_uid": 3656560175341090257
 }
-metadata/_aseprite_wizard_source_file_hash_ = "2f2a85509db7a338c40684203b733fa4"
+metadata/_aseprite_wizard_source_file_hash_ = "67abefb6d6e37f5214b7e401e21de8aa"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1397641399]
 shape = SubResource("RectangleShape2D_3smdo")
-disabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ot2xv")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=674684917]
+libraries/ = SubResource("AnimationLibrary_ot2xv")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=2042603408]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2062538358]
 shape = SubResource("RectangleShape2D_b3jmt")
 
-[node name="enter_area" type="Area2D" parent="."]
+[node name="enter_area" type="Area2D" parent="." unique_id=77824621]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area" unique_id=1636093411]
 shape = SubResource("CircleShape2D_3smdo")
 
-[node name="exit_area" type="Area2D" parent="."]
+[node name="exit_area" type="Area2D" parent="." unique_id=1454972968]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=1812944432]
 shape = SubResource("CircleShape2D_b3jmt")
+
+[node name="HEALTH_COMPONENT" type="Node" parent="." unique_id=2018531524]
+script = ExtResource("2_jtgcf")
+max_health = 5
+metadata/_custom_type_script = "uid://dw5oefh5egyfm"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="enter_area" to="." method="_on_enter_area_body_entered"]
