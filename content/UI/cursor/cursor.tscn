@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b6kclmgwfkakr"]
+
+[ext_resource type="Texture2D" uid="uid://crw70k2xd5sus" path="res://content/UI/cursor/cursor.png" id="1_yf5gy"]
+
+[node name="cursor" type="Sprite2D" unique_id=1606696239]
+z_index = 4096
+texture = ExtResource("1_yf5gy")

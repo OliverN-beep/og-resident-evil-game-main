@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cxang1atldc7"]
+
+[ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_4o00g"]
+[ext_resource type="Texture2D" uid="uid://2tdk0hucki2w" path="res://content/UI/Inventory/sprites/key1_d.png" id="2_141j2"]
+
+[resource]
+script = ExtResource("1_4o00g")
+name = "Key1"
+texture = ExtResource("2_141j2")
+dimensions = Vector2i(1, 1)
+item_description = "KEY FOR OPENING DOOR 1"
+metadata/_custom_type_script = "uid://dttjy8l3fgchc"

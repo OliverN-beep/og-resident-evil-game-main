@@ -32,19 +32,6 @@ func pick_up(player):
 	
 	queue_free()
 
-func drop():
-	if holder == null:
-		return
-	
-	var world = holder.get_parent()
-	get_parent().remove_child(self)
-	world.add_child(self)
-	global_position = holder.global_position
-	
-	holder = null
-	pickup_area.monitoring = true
-	picked_up = false
-
 func use():
 	# Override in child item classes (e.g. shotgun, knife, body armour, etc.)
 	pass

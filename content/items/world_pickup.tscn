@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bc1pja6ab0iml"]
+
+[ext_resource type="Script" uid="uid://cjm7meujnaaaa" path="res://content/items/world_pickup.gd" id="1_ukrtj"]
+
+[node name="WorldPickup" type="Node2D" unique_id=1692277716]
+script = ExtResource("1_ukrtj")

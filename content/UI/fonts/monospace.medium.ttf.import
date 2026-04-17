@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://casyepx5y2w2a"
-path="res://.godot/imported/Cohaerentia-Italic.ttf-ddff247dcfda43a69a6743f0ed4d5d40.fontdata"
+uid="uid://c3r5uwfsflxo0"
+path="res://.godot/imported/monospace.medium.ttf-53c3d31ddbf0a8a7a9987186e48a1449.fontdata"
 
 [deps]
 
-source_file="res://content/UI/fonts/Cohaerentia/Cohaerentia-Italic.ttf"
-dest_files=["res://.godot/imported/Cohaerentia-Italic.ttf-ddff247dcfda43a69a6743f0ed4d5d40.fontdata"]
+source_file="res://content/UI/fonts/monospace.medium.ttf"
+dest_files=["res://.godot/imported/monospace.medium.ttf-53c3d31ddbf0a8a7a9987186e48a1449.fontdata"]
 
 [params]
 

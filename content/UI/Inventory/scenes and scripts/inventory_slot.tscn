@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b3q3blp1fmvsf"]
 
+[ext_resource type="Texture2D" uid="uid://bqt3sfiowbxh2" path="res://content/UI/inv_slot.png" id="1_l4h4n"]
+
 [node name="InventorySlot" type="ColorRect" unique_id=1718030488]
 custom_minimum_size = Vector2(64, 64)
 offset_right = 16.0
@@ -7,12 +9,12 @@ offset_bottom = 16.0
 mouse_filter = 2
 color = Color(0.2520276, 0.25202766, 0.25202763, 1)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=730718990]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=164795840]
 custom_minimum_size = Vector2(62, 62)
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
-offset_right = 15.0
-offset_bottom = 15.0
+offset_right = 63.0
+offset_bottom = 63.0
 mouse_filter = 2
-color = Color(0.50928617, 0.50928617, 0.50928617, 1)
+texture = ExtResource("1_l4h4n")

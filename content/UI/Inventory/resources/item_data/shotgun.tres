@@ -10,3 +10,4 @@ name = "Shotgun"
 texture = ExtResource("4_5wt8x")
 dimensions = Vector2i(4, 2)
 gun_resource = ExtResource("2_ayref")
+item_description = "A double-barrelled shotgun, incredibly powerful at close range. Don't try and snipe with this."

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d2prp8khuwo2l"
-path="res://.godot/imported/Cohaerentia-Regular.ttf-bc171523891addeed4bbe57a7be3a454.fontdata"
+uid="uid://bnoea05lq73cu"
+path="res://.godot/imported/monospace.oblique.ttf-bd881cccd8abe98bf674d2456c114b03.fontdata"
 
 [deps]
 
-source_file="res://content/UI/fonts/Cohaerentia/Cohaerentia-Regular.ttf"
-dest_files=["res://.godot/imported/Cohaerentia-Regular.ttf-bc171523891addeed4bbe57a7be3a454.fontdata"]
+source_file="res://content/UI/fonts/monospace.oblique.ttf"
+dest_files=["res://.godot/imported/monospace.oblique.ttf-bd881cccd8abe98bf674d2456c114b03.fontdata"]
 
 [params]
 

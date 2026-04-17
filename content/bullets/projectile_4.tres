@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://dxhy7c4p05j28"]
+
+[ext_resource type="Texture2D" uid="uid://bdcks0pmwdwb3" path="res://content/bullets/sprites/projectile4_d.png" id="1_6o0a0"]
+[ext_resource type="Texture2D" uid="uid://k1avnxo77nup" path="res://content/bullets/sprites/projectile_n.png" id="2_tbdvf"]
+
+[resource]
+diffuse_texture = ExtResource("1_6o0a0")
+normal_texture = ExtResource("2_tbdvf")

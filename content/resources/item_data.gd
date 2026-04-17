@@ -10,12 +10,10 @@ class_name ItemData
 # AMMO RESOURCE MUST BE EMPTY/NULL
 @export var ammo_resource: AmmoResource
 
-# Runtime ammo count (only used if ammo_resource != null)
-@export var ammo_amount: int = 0
-@export var loaded_ammo: int = -1
-
-# Shop data
-@export var shop_price: int
+# Item description
+@export_multiline("monospace") var item_description: String
 
 var grid_index: int = -1
 var is_rotated: bool = false
+var ammo_amount: int = 0
+var loaded_ammo: int = -1

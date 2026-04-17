@@ -9,8 +9,8 @@ class_name Player
 @onready var death_screen: CanvasLayer = $death_screen
 
 # Declare constants
-const MOVE_SPEED: int = 100
-const ACCELERATION: int = 5
+const MOVE_SPEED: int = 120
+const ACCELERATION: int = 10
 const FRICTION: int = 8
 
 # Declare variables
@@ -34,9 +34,7 @@ var inventory_ui_instance: CanvasLayer = null
 var current_item: BaseItem = null
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	
-	animation_player.get_animation("Death").loop_mode = Animation.LOOP_NONE
+	#animation_player.get_animation("Death").loop_mode = Animation.LOOP_NONE
 	
 	# Make sure UI starts at the right value
 	hearts_ui.max_health = health_component.max_health
@@ -63,8 +61,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Animations based on walk direction
 	if input_dir:
-		animation_player.play("Walk", -1, 1.0)
-		player_sprite.flip_h = input_dir.x < 0
+		animation_player.play("Move", -1, 1.0)
 	else:
 		animation_player.play("Idle", -1, 1.0)
 	
@@ -78,6 +75,8 @@ func _physics_process(delta: float) -> void:
 	var lerp_weight = delta * (ACCELERATION if input_dir else FRICTION)
 	velocity = lerp(velocity, input_dir.normalized() * MOVE_SPEED, lerp_weight)
 	move_and_slide()
+	
+	player_sprite.rotation = lerp_angle(player_sprite.rotation, (get_global_mouse_position() - global_position).angle(), 6.5 * delta)
 
 func _unhandled_input(event):
 	# Check the gameplay state first (e.g. if the player is in the inventory)
@@ -150,7 +149,7 @@ func toggle_player_inventory():
 		GameplayState.inventory_open = false 
 		
 		# Hide cursor
-		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
 	else:
 		if not GameplayState.can_act():

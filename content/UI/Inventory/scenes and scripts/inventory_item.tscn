@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bxk8pfcrw42c5" path="res://content/UI/Inventory/scenes and scripts/inventory_item.gd" id="1_c36qv"]
 [ext_resource type="Material" uid="uid://nb2p2g5pfmiq" path="res://content/unlit.tres" id="1_nkiud"]
-[ext_resource type="FontFile" uid="uid://d2prp8khuwo2l" path="res://content/UI/fonts/Cohaerentia/Cohaerentia-Regular.ttf" id="3_uedul"]
-
-[sub_resource type="Theme" id="Theme_jcsqh"]
-default_font = ExtResource("3_uedul")
-default_font_size = 24
+[ext_resource type="FontFile" uid="uid://c3r5uwfsflxo0" path="res://content/UI/fonts/monospace.medium.ttf" id="3_uedul"]
+[ext_resource type="FontFile" uid="uid://csf5db3ux7rb5" path="res://content/UI/fonts/monospace.bold.ttf" id="5_tpcbq"]
+[ext_resource type="FontFile" uid="uid://bnoea05lq73cu" path="res://content/UI/fonts/monospace.oblique.ttf" id="6_q8230"]
 
 [node name="InventoryItem" type="Sprite2D" unique_id=1619498105]
 material = ExtResource("1_nkiud")
@@ -15,27 +13,53 @@ script = ExtResource("1_c36qv")
 [node name="StackLabel" type="Label" parent="." unique_id=572527846]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_uedul")
 
 [node name="buttonmenu" type="VBoxContainer" parent="." unique_id=1413068675]
+z_index = 4
 offset_left = -3.0
 offset_top = 76.0
 offset_right = 74.0
 offset_bottom = 177.0
-theme = SubResource("Theme_jcsqh")
-theme_override_constants/separation = 2
+theme_override_constants/separation = 4
 
 [node name="use" type="Button" parent="buttonmenu" unique_id=1012119780]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uedul")
 text = "Use"
-
-[node name="drop" type="Button" parent="buttonmenu" unique_id=1951336023]
-layout_mode = 2
-text = "Drop"
 
 [node name="combine" type="Button" parent="buttonmenu" unique_id=1837724188]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uedul")
 text = "Combine"
 
+[node name="examine" type="Button" parent="buttonmenu" unique_id=360733849]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uedul")
+text = "Examine"
+
+[node name="DescriptionContainer" type="MarginContainer" parent="." unique_id=727780934]
+offset_left = -200.0
+offset_top = 150.0
+offset_right = 600.0
+offset_bottom = 750.0
+mouse_filter = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ItemDescription" type="RichTextLabel" parent="DescriptionContainer" unique_id=817259586]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_uedul")
+theme_override_fonts/bold_font = ExtResource("5_tpcbq")
+theme_override_fonts/italics_font = ExtResource("6_q8230")
+text = "Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder"
+
+[node name="description background" type="ColorRect" parent="DescriptionContainer" unique_id=562397637]
+layout_mode = 2
+color = Color(0, 0, 0, 0.27450982)
+
 [connection signal="pressed" from="buttonmenu/use" to="." method="_on_use_pressed"]
-[connection signal="pressed" from="buttonmenu/drop" to="." method="_on_drop_pressed"]
 [connection signal="pressed" from="buttonmenu/combine" to="." method="_on_combine_pressed"]
+[connection signal="pressed" from="buttonmenu/examine" to="." method="_on_examine_pressed"]

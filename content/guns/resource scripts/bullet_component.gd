@@ -30,4 +30,4 @@ enum FireMode {
 # Visual / damage
 @export var bullet_type: int
 @export var bullet_type_array: Array[Texture2D]
-@export var damage_per_type := [10, 5, 2, 1]
+@export var damage_per_type := [1, 2, 5, 10]

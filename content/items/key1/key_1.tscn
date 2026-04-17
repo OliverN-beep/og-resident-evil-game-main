@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bv214w8i3isv3"]
+
+[ext_resource type="Script" uid="uid://cmmw6ymruhxnq" path="res://content/items/key1/key_1.gd" id="1_43ir5"]
+[ext_resource type="Texture2D" uid="uid://cb0ty5m2bs0r8" path="res://content/items/key1/key1_d.png" id="1_dm1ky"]
+[ext_resource type="Resource" uid="uid://cxang1atldc7" path="res://content/UI/Inventory/resources/item_data/key1.tres" id="2_x22a7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43ir5"]
+size = Vector2(20, 32)
+
+[node name="Key1" type="Node2D" unique_id=526744202 groups=["items"]]
+script = ExtResource("1_43ir5")
+item_data = ExtResource("2_x22a7")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=1336486059]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=1709627253]
+shape = SubResource("RectangleShape2D_43ir5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=625357817]
+texture = ExtResource("1_dm1ky")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="outline" type="Sprite2D" parent="." unique_id=1565238715]
+texture = ExtResource("1_dm1ky")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)

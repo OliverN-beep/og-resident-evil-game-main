@@ -1,8 +1,8 @@
-[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://c6g6mfudtp37m"]
+[gd_resource type="CanvasTexture" format=3 uid="uid://c6g6mfudtp37m"]
 
 [ext_resource type="Texture2D" uid="uid://c442grga2v0vx" path="res://content/bullets/sprites/projectile2_d.png" id="1_2gtnt"]
-[ext_resource type="Texture2D" uid="uid://dsqt36cml0fjl" path="res://content/bullets/sprites/projectile2_n.png" id="2_x85k1"]
+[ext_resource type="Texture2D" uid="uid://k1avnxo77nup" path="res://content/bullets/sprites/projectile_n.png" id="2_2gtnt"]
 
 [resource]
 diffuse_texture = ExtResource("1_2gtnt")
-normal_texture = ExtResource("2_x85k1")
+normal_texture = ExtResource("2_2gtnt")

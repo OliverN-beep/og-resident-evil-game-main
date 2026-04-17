@@ -1,11 +1,14 @@
 [gd_resource type="Resource" script_class="BulletComponent" format=3 uid="uid://dau2m16vqrxx1"]
 
 [ext_resource type="Texture2D" uid="uid://c6g6mfudtp37m" path="res://content/bullets/projectile_2.tres" id="1_0ga3g"]
+[ext_resource type="Texture2D" uid="uid://cgn7cy3c1j163" path="res://content/bullets/projectile_1.tres" id="1_rv68i"]
 [ext_resource type="Script" uid="uid://mbxb1alct6gm" path="res://content/guns/resource scripts/bullet_component.gd" id="2_0ga3g"]
+[ext_resource type="Texture2D" uid="uid://cqsgjghdssaof" path="res://content/bullets/projectile_3.tres" id="3_uacij"]
+[ext_resource type="Texture2D" uid="uid://dxhy7c4p05j28" path="res://content/bullets/projectile_4.tres" id="4_5iand"]
 
 [resource]
 script = ExtResource("2_0ga3g")
 fire_mode = 2
 spawn_offset = 8.0
-bullet_type_array = Array[Texture2D]([ExtResource("1_0ga3g")])
+bullet_type_array = Array[Texture2D]([ExtResource("1_rv68i"), ExtResource("1_0ga3g"), ExtResource("3_uacij"), ExtResource("4_5iand")])
 metadata/_custom_type_script = "uid://mbxb1alct6gm"

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cy6b1lvqky2kp" path="res://content/entities/test_enemy/test_enemy.tscn" id="9_u6763"]
 [ext_resource type="PackedScene" uid="uid://c3178jcidg703" path="res://content/guns/pickups/gun pickups/rifle_pickup.tscn" id="10_u6763"]
 [ext_resource type="PackedScene" uid="uid://cmyldhxygiatm" path="res://content/guns/pickups/gun pickups/handgun_pickup.tscn" id="10_yc8cb"]
+[ext_resource type="PackedScene" uid="uid://bv214w8i3isv3" path="res://content/items/key1/key_1.tscn" id="11_yc8cb"]
 [ext_resource type="PackedScene" uid="uid://cw0efamf63rfg" path="res://content/guns/pickups/ammo pickups/shells_pickup.tscn" id="14_ufxyo"]
 [ext_resource type="PackedScene" uid="uid://c4e4skvybxwcq" path="res://content/guns/pickups/ammo pickups/50_cal_pickup.tscn" id="16_i8r2k"]
 
@@ -50,3 +51,6 @@ position = Vector2(-74, 39)
 
 [node name="HandgunPickup" parent="." unique_id=876761872 instance=ExtResource("10_yc8cb")]
 position = Vector2(-215, 160)
+
+[node name="Key1" parent="." unique_id=526744202 instance=ExtResource("11_yc8cb")]
+position = Vector2(-182, 219)

@@ -190,6 +190,8 @@ func _reload():
 	
 	is_reloading = false
 	ammo_changed.emit(current_ammo)
+	
+	print("RELOAD FINISHED")
 
 func setup_from_item(item_data: ItemData):
 	gun_item_data = item_data

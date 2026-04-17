@@ -41,6 +41,7 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "96d931788bf48a53a0250803448aa713"
 
 [node name="aim_line" type="Sprite2D" parent="RotationOffset" unique_id=475877455]
+visible = false
 texture_repeat = 2
 texture = ExtResource("3_wb7dg")
 offset = Vector2(32, 0)

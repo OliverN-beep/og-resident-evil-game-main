@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bj67wy1jqftwx"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bj67wy1jqftwx"]
 
 [ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_i03fk"]
 [ext_resource type="Texture2D" uid="uid://dx4s7xff6gy1w" path="res://content/UI/Inventory/sprites/magnum_d.png" id="2_op2u1"]
@@ -8,3 +8,4 @@ script = ExtResource("1_i03fk")
 name = "Magnum"
 texture = ExtResource("2_op2u1")
 dimensions = Vector2i(2, 2)
+item_description = "It goes BOOM."

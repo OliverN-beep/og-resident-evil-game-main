@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b6f1ip3w81vfr"
+path="res://.godot/imported/drone companion.aseprite-9478f994354e3f28ddb4a7ea219d132c.res"
+
+[deps]
+
+source_file="res://content/entities/player/drone companion.aseprite"
+dest_files=["res://.godot/imported/drone companion.aseprite-9478f994354e3f28ddb4a7ea219d132c.res"]
+
+[params]
+

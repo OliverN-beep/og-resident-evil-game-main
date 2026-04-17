@@ -41,4 +41,4 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 script = ExtResource("7_uxy71")
 inventory_slot_scene = ExtResource("8_inouc")
-grid_dimensions = Vector2i(5, 4)
+grid_dimensions = Vector2i(7, 5)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cgn7cy3c1j163" path="res://content/bullets/projectile_1.tres" id="2_mropq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4lhiu"]
-size = Vector2(2, 2)
+size = Vector2(4, 4)
 
 [node name="Bullet" type="Area2D" unique_id=1661146194]
 z_index = 2

@@ -10,4 +10,5 @@ name = "Rifle"
 texture = ExtResource("2_p76gb")
 dimensions = Vector2i(4, 1)
 gun_resource = ExtResource("1_fw6k1")
+item_description = "Bolt-action sniper rifle, great for high precision single fire damage."
 metadata/_custom_type_script = "uid://dttjy8l3fgchc"

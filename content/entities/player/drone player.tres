@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://cs0gqas2ioi50"]
+
+[ext_resource type="Texture2D" uid="uid://bufmlkqjm0wlm" path="res://content/entities/player/drone companion_d.png" id="1_6akap"]
+[ext_resource type="Texture2D" uid="uid://ckfrcuofb3tmw" path="res://content/entities/player/drone companion_n.png" id="2_ow3xb"]
+
+[resource]
+diffuse_texture = ExtResource("1_6akap")
+normal_texture = ExtResource("2_ow3xb")

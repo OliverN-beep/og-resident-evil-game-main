@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cclxpyg7phsn4"]
 
 [ext_resource type="Script" uid="uid://ba0kiugkqb372" path="res://content/UI/Pause Menu/pause_menu.gd" id="1_1m2p7"]
-[ext_resource type="FontFile" uid="uid://d2prp8khuwo2l" path="res://content/UI/fonts/Cohaerentia/Cohaerentia-Regular.ttf" id="3_0ejqv"]
+[ext_resource type="FontFile" uid="uid://c3r5uwfsflxo0" path="res://content/UI/fonts/monospace.medium.ttf" id="2_a341m"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=2034680663]
 process_mode = 3
@@ -32,13 +32,13 @@ theme_override_constants/separation = 16
 
 [node name="resume" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1416423336]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_0ejqv")
+theme_override_fonts/font = ExtResource("2_a341m")
 theme_override_font_sizes/font_size = 80
 text = "Resume"
 
 [node name="quit" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1578532323]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_0ejqv")
+theme_override_fonts/font = ExtResource("2_a341m")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 

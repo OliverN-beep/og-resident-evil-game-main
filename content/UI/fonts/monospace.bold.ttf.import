@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bkechg1koo8ue"
-path="res://.godot/imported/Cohaerentia-SmallCaps-regular.ttf-7bb518a420dd7ce60dea863aa047a3d5.fontdata"
+uid="uid://csf5db3ux7rb5"
+path="res://.godot/imported/monospace.bold.ttf-8eef7a0d98dfe68ba0047f46504ea7c8.fontdata"
 
 [deps]
 
-source_file="res://content/UI/fonts/Cohaerentia/Cohaerentia-SmallCaps-regular.ttf"
-dest_files=["res://.godot/imported/Cohaerentia-SmallCaps-regular.ttf-7bb518a420dd7ce60dea863aa047a3d5.fontdata"]
+source_file="res://content/UI/fonts/monospace.bold.ttf"
+dest_files=["res://.godot/imported/monospace.bold.ttf-8eef7a0d98dfe68ba0047f46504ea7c8.fontdata"]
 
 [params]
 

@@ -30,6 +30,7 @@ GameplayState="*uid://bcp01qaopacu6"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://crw70k2xd5sus"
 
 [editor_plugins]
 
@@ -38,6 +39,10 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 [global_group]
 
 items=""
+
+[gui]
+
+theme/custom_font="uid://c3r5uwfsflxo0"
 
 [input]
 

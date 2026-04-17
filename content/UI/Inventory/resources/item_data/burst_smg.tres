@@ -10,4 +10,5 @@ name = "Burst SMG"
 texture = ExtResource("2_3fled")
 dimensions = Vector2i(3, 2)
 gun_resource = ExtResource("1_jgssv")
+item_description = "brrrrrrrrrrrrrrrrrrr"
 metadata/_custom_type_script = "uid://dttjy8l3fgchc"

@@ -10,3 +10,4 @@ name = "Handgun"
 texture = ExtResource("3_lyb4o")
 dimensions = Vector2i(2, 2)
 gun_resource = ExtResource("1_iiqs1")
+item_description = "Standard-issue handgun"

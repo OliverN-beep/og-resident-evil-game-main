@@ -8,3 +8,9 @@ script = ExtResource("1_5h7pl")
 name = "Medkit"
 texture = ExtResource("2_crh1k")
 dimensions = Vector2i(1, 2)
+item_description = "The medkit will heal 1HP.
+There aren't many of these 
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+use sparingly."
