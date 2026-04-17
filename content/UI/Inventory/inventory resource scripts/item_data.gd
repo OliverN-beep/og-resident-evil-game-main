@@ -13,6 +13,8 @@ class_name ItemData
 # Item description
 @export_multiline("monospace") var item_description: String
 
+@export var item_script: Script
+
 var grid_index: int = -1
 var is_rotated: bool = false
 var ammo_amount: int = 0

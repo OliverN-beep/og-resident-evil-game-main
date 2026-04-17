@@ -1,4 +1,4 @@
-extends BaseItem
+extends WorldPickup
 
 var medkit_heal_amount: int = 1
 

@@ -1,5 +1,5 @@
 extends Node2D
-class_name BaseItem
+class_name WorldPickup
 
 @onready var pickup_area: Area2D = $PickupArea
 @onready var outline_sprite: Sprite2D = $outline

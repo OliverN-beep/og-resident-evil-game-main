@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://0ir2chnqb0xe"]
 
 [ext_resource type="Resource" uid="uid://cq1xem5kwd3ys" path="res://content/guns/resources/gun resources/rifle_resource.tres" id="1_fw6k1"]
-[ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/resources/item_data.gd" id="1_ofnnr"]
+[ext_resource type="Script" uid="uid://dttjy8l3fgchc" path="res://content/UI/Inventory/inventory resource scripts/item_data.gd" id="1_ofnnr"]
 [ext_resource type="Texture2D" uid="uid://4akdm2dyv48q" path="res://content/UI/Inventory/sprites/rifle_d.png" id="2_p76gb"]
 
 [resource]

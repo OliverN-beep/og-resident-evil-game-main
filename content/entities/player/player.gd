@@ -30,8 +30,8 @@ var gun_instance: Node2D
 # Track the open UI instance so we can close it later
 var inventory_ui_instance: CanvasLayer = null
 
-# Base Item reference
-var current_item: BaseItem = null
+# WorldPickup reference
+var current_item: WorldPickup = null
 
 func _ready() -> void:
 	#animation_player.get_animation("Death").loop_mode = Animation.LOOP_NONE
@@ -103,7 +103,7 @@ func try_pickup():
 	for item in get_tree().get_nodes_in_group("items"):
 		if item.can_interact:
 			item.pick_up(self)
-			current_item = item
+			#current_item.action = item
 			break
 
 func apply_knockback(direction: Vector2, force: float, knockback_duration: float) -> void:

@@ -9,7 +9,6 @@ const SLOT_SIZE = 64
 @onready var item_description: RichTextLabel = $DescriptionContainer/ItemDescription
 
 var data: ItemData
-var current_item: BaseItem
 
 var is_picked: bool = false
 var is_auto_rotated: bool = false
@@ -111,9 +110,8 @@ func _input(event: InputEvent) -> void:
 			else:
 				_open_menu()
 
-func _try_select() -> void:
+func _equip_gun() -> void:
 	if !data:
-		print("item_data not found, selection failed")
 		return
 	
 	if data.gun_resource == null:
@@ -121,18 +119,12 @@ func _try_select() -> void:
 	
 	is_equipped = true
 	
-	# Only equip if parented to the player's inventory grid
 	var player_inventory := get_tree().get_first_node_in_group("player_inventory_grid")
-	if get_parent() != player_inventory:
-		print("GRID DOES NOT HAVE player_inventory_grid GROUP ASSIGNED!!")
-		return
 	
-	# Use BaseItem derived items
-	if current_item:
-		current_item.use()
-		print("BASE_ITEM USED")
-	else:
-		print("WHERE IS BASE_ITEM?!")
+	# Only equip if parented to the player's inventory grid
+	if get_parent() != player_inventory:
+		print("Wrong inventory grid")
+		return
 	
 	get_tree().call_group("player", "equip_gun", data)
 
@@ -184,17 +176,33 @@ func _is_mouse_over_item() -> bool:
 	var rect = Rect2(global_position - size / 2, size)
 	return rect.has_point(get_global_mouse_position())
 
-func _on_use_pressed() -> void:
-	if !is_equipped:
-		# Equip gun/item
-		_try_select()
-		
-		print("USED")
-		_close_menu()
+func _use_item():
+	if data.item_script == null:
+		print("no item script assigned")
+		return
+	
+	var item_script_instance = data.item_script.new()
+	
+	if item_script_instance.has_method("use"):
+		item_script_instance.use()
 	else:
+		print("Item has no use() method")
+
+func _on_use_pressed() -> void:
+	if is_equipped:
 		print("already equipped")
 		_close_menu()
 		return
+	
+	if data.gun_resource != null:
+		print("GUN EQUIPPED")
+		_equip_gun()
+	else:
+		print("ITEM USED")
+		_use_item()
+	
+	print("USED")
+	_close_menu()
 
 func _on_combine_pressed() -> void:
 	_close_menu()

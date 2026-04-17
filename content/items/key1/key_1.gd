@@ -1,4 +1,4 @@
-extends BaseItem
+extends WorldPickup
 
 func use():
 	print("KEY USED")
