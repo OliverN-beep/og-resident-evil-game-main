@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AmmoResource" format=3 uid="uid://dwpbqbmjmx5x6"]
+
+[ext_resource type="Texture2D" uid="uid://4n5nx6jykapr" path="res://content/UI/Inventory/sprites/5.56mm_d.png" id="1_lcmy7"]
+[ext_resource type="Script" uid="uid://dh60oul8u5ttv" path="res://content/guns and ammo/resource scripts/ammo_resource.gd" id="1_utlu3"]
+
+[resource]
+script = ExtResource("1_utlu3")
+ammo_type = "5.56mm"
+max_stack = 24
+inventory_icon = ExtResource("1_lcmy7")
+metadata/_custom_type_script = "uid://dh60oul8u5ttv"

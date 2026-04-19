@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GunResource" format=3 uid="uid://g3bcgn600icj"]
+
+[ext_resource type="Resource" uid="uid://cwg2syly22q1s" path="res://content/components/bullet/handgun_bullet.tres" id="1_fxrii"]
+[ext_resource type="Script" uid="uid://clkhwh0wmh042" path="res://content/guns and ammo/resource scripts/gun_resource.gd" id="1_sfkuj"]
+[ext_resource type="PackedScene" uid="uid://dm8x4slcstgn0" path="res://content/guns and ammo/gun.tscn" id="1_w1vhj"]
+
+[resource]
+script = ExtResource("1_sfkuj")
+display_name = "Handgun"
+gun_scene = ExtResource("1_w1vhj")
+ammo_type = "9mm"
+magazine_size = 10
+reload_time = 1.0
+bullet_component = ExtResource("1_fxrii")
+metadata/_custom_type_script = "uid://clkhwh0wmh042"

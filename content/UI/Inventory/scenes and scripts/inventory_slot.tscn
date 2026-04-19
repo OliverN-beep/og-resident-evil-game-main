@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3q3blp1fmvsf"]
 
-[ext_resource type="Texture2D" uid="uid://bqt3sfiowbxh2" path="res://content/UI/inv_slot.png" id="1_l4h4n"]
+[ext_resource type="Texture2D" uid="uid://bqt3sfiowbxh2" path="res://content/UI/Inventory/inv_slot.png" id="1_l4h4n"]
 
 [node name="InventorySlot" type="ColorRect" unique_id=1718030488]
 custom_minimum_size = Vector2(64, 64)

@@ -9,7 +9,10 @@ signal died
 @export var contact_damage: int = 1
 @export var heal_amount: int = 1
 
-var current_health: int = max_health
+var current_health: int
+
+func _ready() -> void:
+	current_health = max_health
 
 # Taking damage
 func take_damage(amount: int) -> void:

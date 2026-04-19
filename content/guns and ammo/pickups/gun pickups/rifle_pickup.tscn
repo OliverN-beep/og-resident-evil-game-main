@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c3178jcidg703"]
+
+[ext_resource type="Script" uid="uid://gtkoprb6nnep" path="res://content/guns and ammo/pickups/gun pickups/rifle_pickup.gd" id="1_kwnbw"]
+[ext_resource type="Texture2D" uid="uid://gfh5d7kegij" path="res://content/guns and ammo/pickup sprites/guns/rifle_d.png" id="2_3k2g8"]
+[ext_resource type="Resource" uid="uid://0ir2chnqb0xe" path="res://content/UI/Inventory/resources/item_data/rifle.tres" id="2_i24cr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i24cr"]
+size = Vector2(56, 20)
+
+[node name="RiflePickup" type="Node2D" unique_id=1571234771 groups=["items"]]
+script = ExtResource("1_kwnbw")
+item_data = ExtResource("2_i24cr")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=510674971]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea" unique_id=335946046]
+shape = SubResource("RectangleShape2D_i24cr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1245301487]
+texture = ExtResource("2_3k2g8")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 16)
+
+[node name="outline" type="Sprite2D" parent="." unique_id=1065766148]
+texture = ExtResource("2_3k2g8")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 16)

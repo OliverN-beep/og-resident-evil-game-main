@@ -4,12 +4,11 @@
 [ext_resource type="Script" uid="uid://dw5oefh5egyfm" path="res://content/components/health/health_component.gd" id="2_55yfw"]
 [ext_resource type="Resource" uid="uid://dhmfenv3waduj" path="res://content/UI/Inventory/resources/inventory_data/player_data.tres" id="2_r5tfu"]
 [ext_resource type="Texture2D" uid="uid://cs0gqas2ioi50" path="res://content/entities/player/drone player.tres" id="4_iakl4"]
-[ext_resource type="PackedScene" uid="uid://ibed6d3m8j7e" path="res://content/UI/health/hearts_ui.tscn" id="5_55yfw"]
+[ext_resource type="PackedScene" uid="uid://ibed6d3m8j7e" path="res://content/UI/misc/health/hearts_ui.tscn" id="5_55yfw"]
 [ext_resource type="PackedScene" uid="uid://dx86234kxp1ur" path="res://content/UI/Inventory/scenes and scripts/player_inventory.tscn" id="5_r5tfu"]
-[ext_resource type="Texture2D" uid="uid://33f6nlg3dro6" path="res://content/UI/borders/border1_d.png" id="6_i83cd"]
-[ext_resource type="PackedScene" uid="uid://cclxpyg7phsn4" path="res://content/UI/Pause Menu/pause_menu.tscn" id="7_1umn6"]
-[ext_resource type="Shader" uid="uid://qbdj5m885et7" path="res://content/shaders/screen_effect.gdshader" id="8_i83cd"]
-[ext_resource type="PackedScene" uid="uid://dc0ot77y3sa57" path="res://content/UI/death_screen/death_screen.tscn" id="10_iakl4"]
+[ext_resource type="Texture2D" uid="uid://33f6nlg3dro6" path="res://content/UI/misc/borders/border1_d.png" id="6_i83cd"]
+[ext_resource type="PackedScene" uid="uid://cclxpyg7phsn4" path="res://content/UI/menus/Pause Menu/pause_menu.tscn" id="7_1umn6"]
+[ext_resource type="PackedScene" uid="uid://dc0ot77y3sa57" path="res://content/UI/menus/death_screen/death_screen.tscn" id="10_iakl4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u1ecw"]
 size = Vector2(5, 5)
@@ -52,13 +51,6 @@ _data = {
 &"Move": SubResource("Animation_g15rv")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iakl4"]
-shader = ExtResource("8_i83cd")
-
-[sub_resource type="QuadMesh" id="QuadMesh_g15rv"]
-size = Vector2(1920, 1080)
-center_offset = Vector3(960, 540, 0)
-
 [node name="Player" type="CharacterBody2D" unique_id=1361683113 groups=["damageable", "player"]]
 z_index = 2
 script = ExtResource("1_cp3qr")
@@ -99,7 +91,7 @@ libraries/ = SubResource("AnimationLibrary_piw5s")
 
 [node name="HEALTH_COMPONENT" type="Node" parent="." unique_id=2054341854]
 script = ExtResource("2_55yfw")
-max_health = 2
+max_health = 8
 metadata/_custom_type_script = "uid://dw5oefh5egyfm"
 
 [node name="Overlay" type="CanvasLayer" parent="." unique_id=581603881]
@@ -128,11 +120,5 @@ offset_left = 105.00001
 offset_right = 105.0
 
 [node name="PauseMenu" parent="." unique_id=2034680663 instance=ExtResource("7_1umn6")]
-
-[node name="CRT Canvas" type="CanvasLayer" parent="." unique_id=1441296696]
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CRT Canvas" unique_id=388220788]
-material = SubResource("ShaderMaterial_iakl4")
-mesh = SubResource("QuadMesh_g15rv")
 
 [node name="death_screen" parent="." unique_id=1287883573 instance=ExtResource("10_iakl4")]

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bxk8pfcrw42c5" path="res://content/UI/Inventory/scenes and scripts/inventory_item.gd" id="1_c36qv"]
 [ext_resource type="Material" uid="uid://nb2p2g5pfmiq" path="res://content/unlit.tres" id="1_nkiud"]
-[ext_resource type="FontFile" uid="uid://c3r5uwfsflxo0" path="res://content/UI/fonts/monospace.medium.ttf" id="3_uedul"]
-[ext_resource type="FontFile" uid="uid://csf5db3ux7rb5" path="res://content/UI/fonts/monospace.bold.ttf" id="5_tpcbq"]
-[ext_resource type="FontFile" uid="uid://bnoea05lq73cu" path="res://content/UI/fonts/monospace.oblique.ttf" id="6_q8230"]
+[ext_resource type="FontFile" uid="uid://c3r5uwfsflxo0" path="res://content/UI/misc/fonts/monospace.medium.ttf" id="3_uedul"]
+[ext_resource type="FontFile" uid="uid://csf5db3ux7rb5" path="res://content/UI/misc/fonts/monospace.bold.ttf" id="5_tpcbq"]
+[ext_resource type="FontFile" uid="uid://bnoea05lq73cu" path="res://content/UI/misc/fonts/monospace.oblique.ttf" id="6_q8230"]
 
 [node name="InventoryItem" type="Sprite2D" unique_id=1619498105]
 material = ExtResource("1_nkiud")
@@ -13,7 +13,7 @@ script = ExtResource("1_c36qv")
 [node name="StackLabel" type="Label" parent="." unique_id=572527846]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("3_uedul")
+theme_override_fonts/font = ExtResource("5_tpcbq")
 
 [node name="buttonmenu" type="VBoxContainer" parent="." unique_id=1413068675]
 z_index = 4

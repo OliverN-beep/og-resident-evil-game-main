@@ -21,7 +21,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-RoomChangeGlobal="*res://content/scripts/RoomChangeGlobal.gd"
+RoomChangeGlobal="*res://content/global scripts/RoomChangeGlobal.gd"
 PlayerGlobal="*uid://g0u5svodqlj4"
 GameplayState="*uid://bcp01qaopacu6"
 

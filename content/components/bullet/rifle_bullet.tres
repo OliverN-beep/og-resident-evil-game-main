@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cgn7cy3c1j163" path="res://content/bullets/projectile_1.tres" id="1_8midl"]
 [ext_resource type="Texture2D" uid="uid://c6g6mfudtp37m" path="res://content/bullets/projectile_2.tres" id="2_18cyk"]
 [ext_resource type="Texture2D" uid="uid://cqsgjghdssaof" path="res://content/bullets/projectile_3.tres" id="3_6tcvr"]
-[ext_resource type="Script" uid="uid://mbxb1alct6gm" path="res://content/guns/resource scripts/bullet_component.gd" id="3_8midl"]
+[ext_resource type="Script" uid="uid://mbxb1alct6gm" path="res://content/guns and ammo/resource scripts/bullet_component.gd" id="3_8midl"]
 [ext_resource type="Texture2D" uid="uid://dxhy7c4p05j28" path="res://content/bullets/projectile_4.tres" id="4_s02hu"]
 
 [resource]

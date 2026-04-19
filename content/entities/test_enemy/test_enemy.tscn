@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bgd32bar3coxv" path="res://content/entities/test_enemy/test_enemy.gd" id="1_b3jmt"]
 [ext_resource type="Script" uid="uid://dw5oefh5egyfm" path="res://content/components/health/health_component.gd" id="2_jtgcf"]
-[ext_resource type="PackedScene" uid="uid://ibed6d3m8j7e" path="res://content/UI/health/hearts_ui.tscn" id="4_krdyo"]
+[ext_resource type="PackedScene" uid="uid://ibed6d3m8j7e" path="res://content/UI/misc/health/hearts_ui.tscn" id="4_krdyo"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_jtgcf"]
 _data = PackedByteArray("AAADAAUAAAABAAAAYAAAADAAAABCAAAAUklGRjoAAABXRUJQVlA4TC4AAAAvX8ALEBcwUQKBFKewy2LBZP5HCLHOf8C7gUiAxJOc5KddW0T/JyAXBGiqe9s+")
@@ -68,6 +68,10 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="HEALTH_COMPONENT" type="Node" parent="." unique_id=2018531524]
+script = ExtResource("2_jtgcf")
+metadata/_custom_type_script = "uid://dw5oefh5egyfm"
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=655075483]
 texture_filter = 1
 texture = SubResource("PortableCompressedTexture2D_jtgcf")
@@ -116,11 +120,6 @@ shape = SubResource("CircleShape2D_3smdo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=1812944432]
 shape = SubResource("CircleShape2D_b3jmt")
-
-[node name="HEALTH_COMPONENT" type="Node" parent="." unique_id=2018531524]
-script = ExtResource("2_jtgcf")
-max_health = 5
-metadata/_custom_type_script = "uid://dw5oefh5egyfm"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="enter_area" to="." method="_on_enter_area_body_entered"]

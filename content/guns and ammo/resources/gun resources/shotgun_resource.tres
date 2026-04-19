@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GunResource" format=3 uid="uid://mr1r7ilf3pst"]
+
+[ext_resource type="Resource" uid="uid://d0fb2wwovs8ov" path="res://content/components/bullet/shotgun_bullet.tres" id="1_guwwn"]
+[ext_resource type="PackedScene" uid="uid://dm8x4slcstgn0" path="res://content/guns and ammo/gun.tscn" id="1_v58vk"]
+[ext_resource type="Script" uid="uid://clkhwh0wmh042" path="res://content/guns and ammo/resource scripts/gun_resource.gd" id="3_6dfnf"]
+
+[resource]
+script = ExtResource("3_6dfnf")
+display_name = "SHOTGUN"
+gun_scene = ExtResource("1_v58vk")
+ammo_type = "SHELLS"
+magazine_size = 5
+reload_time = 2.0
+bullet_component = ExtResource("1_guwwn")
+metadata/_custom_type_script = "uid://clkhwh0wmh042"

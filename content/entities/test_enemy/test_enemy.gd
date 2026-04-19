@@ -39,10 +39,9 @@ func _on_area_2d_body_entered(body: Node) -> void:
 	if !body.is_in_group("damageable"):
 		return
 	
-	var target_health := body.get_node_or_null("HEALTH_COMPONENT")
-	if target_health:
+	if body.is_in_group("player"):
 		print("Enemy hit:", body.name)
-		target_health.take_damage(health_component.contact_damage)
+		body.take_damage(health_component.contact_damage)
 	
 	should_chase = false
 	
