@@ -161,7 +161,7 @@ func _try_reload():
 	if inventory_data == null:
 		return
 	
-	if not inventory_data.has_ammo(gun_resource.ammo_type):
+	if !inventory_data.has_ammo(gun_resource.ammo_type):
 		return
 	
 	_reload()
