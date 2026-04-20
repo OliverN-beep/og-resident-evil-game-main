@@ -32,8 +32,9 @@ tile_set = ExtResource("1_k6lby")
 position = Vector2(-146, 147)
 
 [node name="transition camera" type="Camera2D" parent="Player" unique_id=41272715]
-zoom = Vector2(3.2, 3.2)
+zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
+position_smoothing_speed = 7.0
 script = ExtResource("3_1nsaj")
 
 [node name="CRT Canvas" type="CanvasLayer" parent="Player/transition camera" unique_id=1908846668]

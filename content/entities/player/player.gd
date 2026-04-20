@@ -3,15 +3,16 @@ class_name Player
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_sprite: Sprite2D = $Sprite2D
-@onready var hearts_ui: Control = $CanvasLayer/HeartsUI
 @onready var health_component: HEALTH_COMPONENT = $HEALTH_COMPONENT
 @onready var ui_layer: CanvasLayer = $CanvasLayer
 @onready var death_screen: CanvasLayer = $death_screen
 
+@onready var hearts_ui: Control = $CanvasLayer/HeartsUI
+
 # Declare constants
-const MOVE_SPEED: int = 120
-const ACCELERATION: int = 10
-const FRICTION: int = 8
+const MOVE_SPEED: int = 150
+const ACCELERATION: int = 50
+const FRICTION: int = 50
 
 # Declare variables
 var knockback: Vector2 = Vector2.ZERO
@@ -32,6 +33,9 @@ var inventory_ui_instance: CanvasLayer = null
 
 # WorldPickup reference
 var current_item: WorldPickup = null
+
+var gun_resource: GunResource
+var ammo_resource: AmmoResource
 
 func _ready() -> void:
 	#animation_player.get_animation("Death").loop_mode = Animation.LOOP_NONE
@@ -170,8 +174,8 @@ func _on_gun_ammo_changed(new_amount: int) -> void:
 		equipped_gun_item.loaded_ammo = new_amount
 	
 	# Refresh inventory UI labels
-	for ui in get_tree().get_nodes_in_group("inventory_ui"):
-		ui.rebuild()
+	if inventory_ui_instance:
+		inventory_ui_instance.rebuild()
 
 func take_damage(amount: int):
 	health_component.take_damage(amount)

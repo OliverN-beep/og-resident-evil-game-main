@@ -3,7 +3,7 @@ extends Control
 @onready var hearts_container: HBoxContainer = $HBoxContainer
 
 var max_health: int
-var current_health: int = max_health
+var current_health: int
 
 var heart_full: Texture = preload("res://content/UI/misc/health/heart.png")
 var heart_empty: Texture = preload("res://content/UI/misc/health/empty heart.png")
@@ -12,6 +12,8 @@ var health_component: HEALTH_COMPONENT
 
 func _ready():
 	update_hearts()
+	
+	current_health = max_health
 
 func update_hearts():
 	# Clear existing hearts

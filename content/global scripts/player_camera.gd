@@ -15,9 +15,9 @@ func _physics_process(_delta: float) -> void:
 
 func _update_screen(new_screen: Vector2):
 	current_screen = new_screen
-	#global_position = SCREEN_SIZE * (current_screen * 0.5)
 	global_position = current_screen * SCREEN_SIZE + SCREEN_SIZE * 0.5
 
+# DEBUG
 #func _draw():
 	#for x in range(-5, 5):
 		#for y in range(-5, 5):

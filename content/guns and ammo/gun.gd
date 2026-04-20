@@ -8,18 +8,17 @@ const bullet_scene = preload("res://content/bullets/bullet.tscn")
 signal ammo_changed(current: int)
 
 # Booleans
-var can_shoot := true
+var can_shoot: bool = true
 
 # Resources
 var gun_resource: GunResource
 var bullet_component: BulletComponent
 var inventory_data: InventoryData
+var gun_item_data: ItemData
 
 # Ammo stuff
-var current_ammo := 0
-var is_reloading := false
-
-var gun_item_data: ItemData
+var current_ammo: int = 0
+var is_reloading: bool = false
 
 func set_gun_resource(res: GunResource, item_data: ItemData) -> void:
 	gun_resource = res
@@ -109,8 +108,6 @@ func _fire_weapon():
 		_fire_burst()
 	else:
 		_shoot_once()
-	
-	shoot_timer.start()
 	
 	shoot_timer.start()
 	

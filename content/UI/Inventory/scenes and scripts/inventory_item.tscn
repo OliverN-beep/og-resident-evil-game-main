@@ -11,9 +11,12 @@ material = ExtResource("1_nkiud")
 script = ExtResource("1_c36qv")
 
 [node name="StackLabel" type="Label" parent="." unique_id=572527846]
+offset_top = 16.0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 38.999996
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_tpcbq")
+theme_override_font_sizes/font_size = 20
 
 [node name="buttonmenu" type="VBoxContainer" parent="." unique_id=1413068675]
 z_index = 4

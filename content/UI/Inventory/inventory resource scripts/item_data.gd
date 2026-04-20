@@ -15,7 +15,7 @@ class_name ItemData
 
 @export var item_script: Script
 
-var grid_index: int = -1
-var is_rotated: bool = false
-var ammo_amount: int = 0
-var loaded_ammo: int = -1
+@export var grid_index: int = -1
+@export var is_rotated: bool = false
+@export var ammo_amount: int = 0
+@export var loaded_ammo: int = -1

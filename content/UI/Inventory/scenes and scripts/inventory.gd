@@ -48,11 +48,6 @@ func cleanup():
 		item_grid.clear_grid()
 
 func rebuild() -> void:
-	# Remove existing inventory item nodes
-	for child in get_children():
-		if child is Sprite2D:
-			child.queue_free()
-	
 	# Reset grid state
 	item_grid.clear_grid()
 	
