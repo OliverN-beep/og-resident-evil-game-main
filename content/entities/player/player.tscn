@@ -119,6 +119,12 @@ transform = Transform2D(4, 0, 0, 4, 0, 0)
 offset_left = 105.00001
 offset_right = 105.0
 
+[node name="AmmoUI" type="Label" parent="CanvasLayer" unique_id=1652956616]
+offset_left = 119.0
+offset_top = 240.5
+offset_right = 159.0
+offset_bottom = 281.5
+
 [node name="PauseMenu" parent="." unique_id=2034680663 instance=ExtResource("7_1umn6")]
 
 [node name="death_screen" parent="." unique_id=1287883573 instance=ExtResource("10_iakl4")]

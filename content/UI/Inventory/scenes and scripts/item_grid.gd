@@ -173,6 +173,26 @@ func _item_fits(index: int, dimensions: Vector2i) -> bool:
 				return false
 	return true
 
+func has_space_for(item: Node) -> bool:
+	var slot_index := 0
+	var dims = item.get_dimensions()
+	
+	while slot_index < slot_data.size():
+		if _item_fits(slot_index, dims):
+			return true
+		slot_index += 1
+	
+	# try rotated
+	dims = Vector2i(dims.y, dims.x)
+	slot_index = 0
+	
+	while slot_index < slot_data.size():
+		if _item_fits(slot_index, dims):
+			return true
+		slot_index += 1
+	
+	return false
+
 # Function to get which slot we're clicking on
 func _get_slot_index_from_coords(global_coords: Vector2) -> int:
 	var local = global_coords - global_position

@@ -8,6 +8,7 @@ class_name Player
 @onready var death_screen: CanvasLayer = $death_screen
 
 @onready var hearts_ui: Control = $CanvasLayer/HeartsUI
+@onready var ammo_ui: Label = $CanvasLayer/AmmoUI
 
 # Declare constants
 const MOVE_SPEED: int = 150
@@ -106,8 +107,11 @@ func try_pickup():
 	
 	for item in get_tree().get_nodes_in_group("items"):
 		if item.can_interact:
+			if !inventory_ui_instance.item_grid.has_space_for(item):
+				print("inventory full")
+				return
+			
 			item.pick_up(self)
-			#current_item.action = item
 			break
 
 func apply_knockback(direction: Vector2, force: float, knockback_duration: float) -> void:
@@ -138,6 +142,8 @@ func equip_gun(item: ItemData):
 	
 	if gun_instance.has_signal("ammo_changed"):
 		gun_instance.ammo_changed.connect(_on_gun_ammo_changed)
+	
+	update_ammo_ui(gun_instance.current_ammo, gun_instance.gun_resource.magazine_size)
 
 func toggle_player_inventory():
 	if inventory_ui_instance:
@@ -173,9 +179,15 @@ func _on_gun_ammo_changed(new_amount: int) -> void:
 	if equipped_gun_item:
 		equipped_gun_item.loaded_ammo = new_amount
 	
+	if gun_instance and gun_instance.gun_resource:
+		update_ammo_ui(new_amount, gun_instance.gun_resource.magazine_size)
+	
 	# Refresh inventory UI labels
 	if inventory_ui_instance:
 		inventory_ui_instance.rebuild()
+
+func update_ammo_ui(current: int, max_ammo: int) -> void:
+	ammo_ui.text = "%d/%d" % [current, max_ammo]
 
 func take_damage(amount: int):
 	health_component.take_damage(amount)

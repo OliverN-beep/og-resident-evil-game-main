@@ -80,11 +80,9 @@ func _save_layout_to_data():
 		data.grid_index = index
 		data.is_rotated = item.data.is_rotated
 		
-		var new_data: ItemData = data.duplicate(true)
+		data.grid_index = index
+		data.is_rotated = item.data.is_rotated
 
-		new_data.grid_index = index
-		new_data.is_rotated = item.data.is_rotated
-
-		inventory_data.items.append(new_data)
-		
+		inventory_data.items.append(data)
+			
 		print("SAVE:", data.name, "index:", index)

@@ -42,10 +42,10 @@ theme_override_fonts/font = ExtResource("3_uedul")
 text = "Examine"
 
 [node name="DescriptionContainer" type="MarginContainer" parent="." unique_id=727780934]
-offset_left = -200.0
-offset_top = 150.0
-offset_right = 600.0
-offset_bottom = 750.0
+offset_left = -373.0
+offset_top = 146.0
+offset_right = 427.0
+offset_bottom = 746.0
 mouse_filter = 2
 theme_override_constants/margin_left = 120
 theme_override_constants/margin_top = 120
@@ -57,7 +57,11 @@ layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_uedul")
 theme_override_fonts/bold_font = ExtResource("5_tpcbq")
 theme_override_fonts/italics_font = ExtResource("6_q8230")
-text = "Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder"
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
 
 [node name="description background" type="ColorRect" parent="DescriptionContainer" unique_id=562397637]
 layout_mode = 2

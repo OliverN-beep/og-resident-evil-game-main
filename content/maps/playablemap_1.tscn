@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cy6b1lvqky2kp" path="res://content/entities/test_enemy/test_enemy.tscn" id="10_2spyk"]
 [ext_resource type="PackedScene" uid="uid://cmyldhxygiatm" path="res://content/guns and ammo/pickups/gun pickups/handgun_pickup.tscn" id="11_m3l4v"]
 [ext_resource type="PackedScene" uid="uid://bv214w8i3isv3" path="res://content/items/key1/key_1.tscn" id="12_am3dn"]
+[ext_resource type="PackedScene" uid="uid://cc1kp8cqul45u" path="res://content/guns and ammo/pickups/ammo pickups/5_56_mm_pickup.tscn" id="13_1nsaj"]
+[ext_resource type="PackedScene" uid="uid://8y83pqs074vb" path="res://content/guns and ammo/pickups/ammo pickups/9_mm_pickup.tscn" id="14_6icx4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mvtda"]
 shader = ExtResource("4_6icx4")
@@ -49,8 +51,8 @@ position = Vector2(-108, 117)
 [node name="50cal_pickup" parent="." unique_id=1167142066 instance=ExtResource("6_axbgr")]
 position = Vector2(-406, 177)
 
-[node name="ShotgunPickup" parent="." unique_id=1497074001 instance=ExtResource("7_fhrj1")]
-position = Vector2(-158, 106)
+[node name="ShotgunPickup2" parent="." unique_id=1039857304 instance=ExtResource("7_fhrj1")]
+position = Vector2(-232, 94)
 
 [node name="Medkit" parent="." unique_id=394137420 instance=ExtResource("8_r6cc8")]
 position = Vector2(-110, 280)
@@ -69,3 +71,15 @@ position = Vector2(-215, 160)
 
 [node name="Key1" parent="." unique_id=526744202 instance=ExtResource("12_am3dn")]
 position = Vector2(-182, 219)
+
+[node name="5_56mm_pickup" parent="." unique_id=193495702 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="9mm_pickup" parent="." unique_id=1957374906 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="50cal_pickup2" parent="." unique_id=1741749274 instance=ExtResource("6_axbgr")]
+position = Vector2(-58, 150)
+
+[node name="RiflePickup2" parent="." unique_id=781853337 instance=ExtResource("9_glaxd")]
+position = Vector2(-121, 111)
