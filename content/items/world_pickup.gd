@@ -39,11 +39,9 @@ func use():
 func _on_pickup_area_body_entered(body):
 	if body.is_in_group("player"):
 		can_interact = true
-		PlayerGlobal.player = body
 		outline_sprite.visible = true
 
 func _on_pickup_area_body_exited(body):
 	if body.is_in_group("player"):
 		can_interact = false
-		PlayerGlobal.player = null
 		outline_sprite.visible = false

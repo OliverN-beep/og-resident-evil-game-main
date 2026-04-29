@@ -10,6 +10,7 @@ script = ExtResource("1_2fwx1")
 [node name="RotationOffset" type="Node2D" parent="." unique_id=327038784]
 
 [node name="Sprite2D" type="Sprite2D" parent="RotationOffset" unique_id=784802897]
+visible = false
 texture_filter = 1
 texture = ExtResource("2_cj47n")
 hframes = 2

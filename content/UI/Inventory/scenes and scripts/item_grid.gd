@@ -156,8 +156,7 @@ func _attempt_to_add_item_data(item: Node) -> bool:
 	item.update_visual_rotation()
 	item.set_auto_rotated(false)
 	print("COULD NOT FIT ITEM")
-	push_error("Inventory full: Could not add item '%s' (size %dx%d)" %
-		[item.data.name, item.data.dimensions.x, item.data.dimensions.y])
+	push_error("Inventory full: Could not add item '%s' (size %dx%d)" % [item.data.name, item.data.dimensions.x, item.data.dimensions.y])
 	return false
 
 func _item_fits(index: int, dimensions: Vector2i) -> bool:

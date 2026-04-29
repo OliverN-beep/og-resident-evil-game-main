@@ -41,6 +41,9 @@ var ammo_resource: AmmoResource
 func _ready() -> void:
 	#animation_player.get_animation("Death").loop_mode = Animation.LOOP_NONE
 	
+	# Assign player reference from global script
+	PlayerGlobal.player = self
+	
 	# Make sure UI starts at the right value
 	hearts_ui.max_health = health_component.max_health
 	hearts_ui.set_health(health_component.current_health)
@@ -105,11 +108,15 @@ func try_pickup():
 	if current_item != null:
 		return
 	
+	#if inventory_ui_instance == null:
+		#print("inventory ui instance is null")
+		#return
+	
 	for item in get_tree().get_nodes_in_group("items"):
 		if item.can_interact:
-			if !inventory_ui_instance.item_grid.has_space_for(item):
-				print("inventory full")
-				return
+			#if !inventory_ui_instance.item_grid.has_space_for(item):
+				#print("inventory full")
+				#return
 			
 			item.pick_up(self)
 			break

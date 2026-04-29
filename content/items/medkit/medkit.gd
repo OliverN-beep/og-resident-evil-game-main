@@ -5,6 +5,12 @@ var medkit_heal_amount: int = 1
 func use():
 	print("MEDKIT USED")
 	
-	PlayerGlobal.player.health_component.heal(medkit_heal_amount)
+	if PlayerGlobal.player == null:
+		print("NO PLAYER FOUND")
+		return
 	
-	queue_free()
+	if PlayerGlobal.player.health_component == null:
+		print("NO HEALTH COMPONENT")
+		return
+	
+	PlayerGlobal.player.health_component.heal(medkit_heal_amount)

@@ -75,7 +75,97 @@ position = Vector2(-182, 219)
 [node name="5_56mm_pickup" parent="." unique_id=193495702 instance=ExtResource("13_1nsaj")]
 position = Vector2(-102, 206)
 
+[node name="5_56mm_pickup2" parent="." unique_id=1856606442 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup3" parent="." unique_id=156089492 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup4" parent="." unique_id=1855050048 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup5" parent="." unique_id=1667762439 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup6" parent="." unique_id=912686684 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup12" parent="." unique_id=1903225205 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup13" parent="." unique_id=833032332 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup14" parent="." unique_id=1457660890 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup15" parent="." unique_id=881562267 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup16" parent="." unique_id=1126214516 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup17" parent="." unique_id=796298643 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup18" parent="." unique_id=115840569 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup19" parent="." unique_id=204810593 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup20" parent="." unique_id=1291254783 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup21" parent="." unique_id=1738834448 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup22" parent="." unique_id=1682101224 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup23" parent="." unique_id=1404924361 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup7" parent="." unique_id=1785171872 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup8" parent="." unique_id=2036127176 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup9" parent="." unique_id=2140366375 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup10" parent="." unique_id=574152087 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
+[node name="5_56mm_pickup11" parent="." unique_id=259032547 instance=ExtResource("13_1nsaj")]
+position = Vector2(-102, 206)
+
 [node name="9mm_pickup" parent="." unique_id=1957374906 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="9mm_pickup2" parent="." unique_id=875390212 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="9mm_pickup3" parent="." unique_id=1381099908 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="9mm_pickup4" parent="." unique_id=1809591682 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="9mm_pickup5" parent="." unique_id=1619435664 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="9mm_pickup6" parent="." unique_id=1426020059 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="9mm_pickup7" parent="." unique_id=1046004392 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="9mm_pickup8" parent="." unique_id=2130894266 instance=ExtResource("14_6icx4")]
+position = Vector2(-63, 109)
+
+[node name="9mm_pickup9" parent="." unique_id=948994289 instance=ExtResource("14_6icx4")]
 position = Vector2(-63, 109)
 
 [node name="50cal_pickup2" parent="." unique_id=1741749274 instance=ExtResource("6_axbgr")]
