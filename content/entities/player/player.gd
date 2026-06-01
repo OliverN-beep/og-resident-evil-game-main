@@ -11,7 +11,7 @@ class_name Player
 @onready var ammo_ui: Label = $CanvasLayer/AmmoUI
 
 # Declare constants
-const MOVE_SPEED: int = 150
+const MOVE_SPEED: int = 330
 const ACCELERATION: int = 50
 const FRICTION: int = 50
 
@@ -52,9 +52,9 @@ func _ready() -> void:
 	health_component.health_changed.connect(hearts_ui.set_health)
 	health_component.died.connect(_died)
 	
-	if RoomChangeGlobal.Activate:
-		global_position = RoomChangeGlobal.player_pos
-		RoomChangeGlobal.Activate = false
+	#if RoomChangeGlobal.Activate:
+		#global_position = RoomChangeGlobal.player_pos
+		#RoomChangeGlobal.Activate = false
 
 func _physics_process(delta: float) -> void:
 	if !GameplayState.can_act():

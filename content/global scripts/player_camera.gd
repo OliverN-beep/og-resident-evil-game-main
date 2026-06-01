@@ -5,7 +5,11 @@ var current_screen: Vector2 = Vector2(0, 0)
 
 func _ready() -> void:
 	top_level = true
+	enabled = true
+	make_current()
+
 	global_position = get_parent().global_position
+	current_screen = (global_position / SCREEN_SIZE).floor()
 	_update_screen(current_screen)
 
 func _physics_process(_delta: float) -> void:

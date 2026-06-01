@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cjegj1qxsu7ci"]
+
+[ext_resource type="Script" uid="uid://c1oikt7pi5m12" path="res://content/level gen/level_generation.gd" id="1_vla16"]
+
+[node name="LevelGeneration" type="Node2D" unique_id=900166783]
+script = ExtResource("1_vla16")
+
+[node name="foreground" type="TileMapLayer" parent="." unique_id=1032169369]
+z_index = -1
+
+[node name="rooms" type="Node2D" parent="." unique_id=770289074]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1891527542]
+zoom = Vector2(0.5, 0.5)

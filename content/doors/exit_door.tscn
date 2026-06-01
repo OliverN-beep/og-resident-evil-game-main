@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b1x6ghmr66j0d"]
+
+[ext_resource type="Script" uid="uid://bcg2xlmdu7p6f" path="res://content/doors/exit_door.gd" id="1_dkqx2"]
+[ext_resource type="Texture2D" uid="uid://bqlwpuy3kvpjb" path="res://content/doors/exit door_d.png" id="2_c6oln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5lmm"]
+size = Vector2(50, 50)
+
+[node name="ExitDoor" type="Area2D" unique_id=963210042]
+script = ExtResource("1_dkqx2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1713319123]
+shape = SubResource("RectangleShape2D_a5lmm")
+
+[node name="Label" type="Label" parent="." unique_id=521928906]
+offset_right = 40.0
+offset_bottom = 17.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1480082707]
+texture = ExtResource("2_c6oln")
